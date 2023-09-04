@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../lista1/fundo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.exercicios {
+    background-color: rgba(46, 46, 46, 0.815);
+    box-shadow: 4px 4px 20px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.exercicios h1 {
+    font-weight: bold;
+    color: rgb(255, 145, 0);
+}
+.exercicios h3 {
+    margin-top: 20px;
+    border-bottom: 2px solid #DDD;
+    color: rgb(255, 145, 0);
+}
+.area-info {
+    margin-top: 20px;
+    display: flex;
+}
+.area1, .area2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.area1 {
+    margin-right: 50px;
+}
+.area1 a, .area2 a {
+    
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+ul li {
+    color: rgb(255, 145, 0);
+}

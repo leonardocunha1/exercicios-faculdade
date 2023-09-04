@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo IMC</title>
+    <link rel="stylesheet" href="../IMC e ex1 e ex2/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../IMC e ex1 e ex2/imc.js"></script>
+</head>
+<body>
+    <main>
+        <!-- EXERCÍCIO CALCULADORA IMC -->
+        <div class="container">
+            <h1>Calculadora IMC</h1>
+            
+            <div class="barra"></div>
+            
+            <div class="icons">
+                <a href="https://github.com/leonardocunha1" target="_blank">
+                    <i class="fa-brands fa-github" style="color: #000000;"></i>
+                </a>
+                <a href="https://www.instagram.com/leohcunha/" target="_blank">
+                    <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/leonardo-cunha-8a6170263/" target="_blank">
+                    <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
+                </a>
+            </div>
+            
+            <div class="dados">
+                <label for="altura">Digite sua altura em metros</label>
+                <input type="number" id="altura" name="height" placeholder="Ex: 1.76" required>
+    
+                <label for="peso">Digite seu peso em kg</label>
+                <input type="number" id="peso" name="weight" placeholder="Ex: 70.5" required>   
+                
+                <button onclick="calcular()">Calcular</button>
+            </div>
+            
+            <div id="arearesposta">
+                <p id="resultado">
+                     <!-- aqui vai aparecer o imc -->
+                </p>
+            </div>
+
+            <p>Exercício criado para estudo de HTML/CSS e Javascript</p>
+        </div>
+
+
+        <!-- EXERCÍCIO 1 -->
+        <div class="container">
+            <h1>Subtração</h1>
+            
+            <div class="barra"></div>
+            
+            <div class="dados">
+                <label for="ex1num1">Digite um número</label>
+                <input type="number" id="ex1num1" name="ex1num1" placeholder="Ex: 5" required>
+    
+                <label for="ex1num2">Digite outro número</label>
+                <input type="number" id="ex1num2" name="ex1num2" placeholder="Ex: 1" required>   
+                
+                <button onclick="sub()">Subtrair</button>
+            </div>
+            
+            <div id="arearesposta">
+                <p id="subtracao">
+                     <!-- aqui vai aparecer o imc -->
+                </p>
+            </div>
+
+            <p>Exercício criado para estudo de HTML/CSS e Javascript</p>
+        </div>
+
+
+        <!-- EXERCÍCIO 2 -->
+        <div class="container">
+            <h1>Multiplicação</h1>
+            
+            <div class="barra"></div>
+            
+            <div class="dados">
+                <label for="ex2num1">Digite um número</label>
+                <input type="number" id="ex2num1" name="ex2num1" required>
+    
+                <label for="ex2num2">Digite outro número</label>
+                <input type="number" id="ex2num2" name="ex2num2" required>
+                
+                <label for="ex2num3">Digite o último número</label>
+                <input type="number" id="ex2num3" name="ex2num3" required>  
+                
+                <button onclick="mult()">Multiplicar</button>
+            </div>
+            
+            <div id="arearesposta">
+                <p id="multiplicacao">
+                     <!-- aqui vai aparecer o imc -->
+                </p>
+            </div>
+
+            <p>Exercício criado para estudo de HTML/CSS e Javascript</p>
+        </div>
+
+
+    </main>
+    <footer>
+        <div class="ft">
+            <p>Site criado por Leonardo Cunha para fins de estudos</p>
+        </div>
+    </footer>
+</body>
+</html>
