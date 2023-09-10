@@ -248,14 +248,56 @@ function exe8() {
     }
     document.getElementById('resultado').innerHTML = mensagem
 }
+function exe9() {
+    let acmidade = 0
+    let qtd = 0
+    let acm = 0
+    let acm1 = 0
+    let mensagem = ``
+    for(let i = 1; i <= 10; i++) {
+        // Se o número for 2.9999, o Math.floor arredonda ele para 2, ou seja, o número inteiro mais baixo
+        let idade = Math.floor(Math.random() * 101) + 1 //idade entre 1 e 100 anos
+        let peso = Math.floor(Math.random() * 101) + 40 //gera números inteiros entre 40 e 140. Olhar explicação da fórmula no exercício 10
+        let altura = Math.floor(Math.random() * 13) / 10 + 1; // gera núemro decimal com apenas uma casa depois da vírgula entre 1 e 2.2
 
+        acmidade = acmidade + idade
+
+        if (peso > 90 && altura < 1.5) {
+            qtd = qtd + 1
+        }
+        if (altura > 1.9) {
+            acm = acm + 1
+            if (idade > 10 && idade < 30) {
+                acm1 = acm1 + 1
+            }
+        }
+    }
+    mensagem = mensagem + `A média das idades é: ${(acmidade / 10).toFixed(0)} anos<br>`
+    if (qtd != 0) {
+        mensagem = mensagem + `A quantidade de pessoas com peso > 90 e altura < 1.5 metros é: ${qtd}<br>`
+    }
+    else {
+        mensagem = mensagem + `Não há pessoas com peso > 90 e altura < 1.5 metros<br>`
+    }
+    if (acm1 != 0) {
+        mensagem = mensagem + `A porcentagem de pessoas com 10 < idade < 30 entre os maiores de 1.9 metros é: ${((acm1/acm)*100).toFixed(2)}%`
+    }
+    else {
+        mensagem = mensagem + `Não há pessoas entre 10 < idade < 30 e maiores de 1.9 metros`
+    }
+    document.getElementById('resultado').innerHTML = mensagem
+}
 function exe10() {
     let acm = 0
     let acm1 = 0
     let mensagem = ''
     
     for (let i = 1; i <= 10; i++) {
-        let numero = Math.floor(Math.random() * 100 + 1)
+        let numero = Math.floor(Math.random() * 101) + 1 
+        //O Math.floor ajusta o valor para o próximo decimal inteiro (em direção ao zero, ou seja, sempre para baixo e não para cima)
+        //O Math.random() gera um número entre 0 e 1, como por exemplo 0.5254
+        //O * 100 multiplica o número gerado pelo Math.random
+        //Adiciona 1 ao número inteiro resultante. Isso ajusta a faixa de números para começar em 1 em vez de 0, para que o resultado final seja um número inteiro aleatório entre 1 e 100 e não 0 e 99
         let div = 0  // Inicializar div aqui
 
         // Acumulando os números pares
@@ -263,14 +305,14 @@ function exe10() {
             acm = acm + numero
         }
 
-        // Números primos
+        // Acumulando os números primos
         for (let aux = 1; aux <= numero; aux++) {
             if (numero % aux == 0) {
                 div = div + 1
             }
         }
 
-        if (div == 2) { // Se tiver mais de 2 divisores, o número já não é primo 
+        if (div == 2) { // Somando os números primos, pois se tiver mais de 2 divisores o número já não é primo 
             acm1 = acm1 + numero
         }
     }
