@@ -1,3 +1,5 @@
+//SORTEAR NÚMEROS DECIMAIS ESTÁ EXPLICADO NO EXERCÍCIO 9!!!!
+//NO EXERCÍCIO 10 ESTÁ EXPLICANDO O MATH.FLOOR E O MATH.RANDOM!! 
 function exe1() {
     for (let i = 0; i<4; i++) {
         let a = Number(prompt("Digite o valor de A"))
@@ -30,21 +32,37 @@ function exe2() {
     let valingresso = 5
     let qtd = 120
     const despesa = 200
-    let corpo = ``
+    let corpo = `
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Despesa</th>
+                <th>Lucro</th>
+            </tr>
+        </thead>
+        <tbody>`
+    
     while (valingresso >= 1) {
         let lucro = qtd * valingresso - despesa
-        // console.log(`Preço: R$${valingresso.toFixed(2)} Quantidade: ${qtd.toFixed(2)} Lucro: R$${lucro.toFixed(2)}`)
         corpo = corpo + `
-        <tr> 
-            <td>${valingresso.toFixed(2)}</td> 
-            <td>${qtd}</td> 
-            <td>${despesa}</td> 
-            <td>${lucro.toFixed(2)}</td> 
-        </tr>`
+            <tr> 
+                <td>${valingresso.toFixed(2)}</td> 
+                <td>${qtd}</td> 
+                <td>${despesa}</td> 
+                <td>${lucro.toFixed(2)}</td> 
+            </tr>`
         valingresso = valingresso - 0.5
         qtd = qtd + 26 
     }
-    document.getElementById('corpo').innerHTML = corpo
+    
+    corpo = corpo + `
+        </tbody>
+    </table>`
+    
+    document.getElementById('resultado').innerHTML = corpo
+    
 }
 function exe3() {
     let acm1 = 0
@@ -54,6 +72,7 @@ function exe3() {
     let acm5 = 0
     for (let i = 1; i <= 8; i++) {
         let idade = Number(prompt("Digite sua idade"))
+        //Daria para usar o let idade = Math.floor(Math.random() * 101) + 1 que sortearia um número inteiro entre 1 e 100
         if (idade <= 0) {
             alert(`Valor inválido`)
         }
@@ -91,12 +110,21 @@ function exe4() {
         let multiplicacao = numero * i
         mensagem = mensagem + `${numero} x ${i} = ${multiplicacao}<br>`
     }
-    document.getElementById("resultado").innerHTML = mensagem
+    document.getElementById("resultado").innerHTML = `Tabuada do ${numero}<br>${mensagem}`
 }
 function exe5() {
     let resposta = ``
     for (let i = 1; i <= 10; i++) {
-        resposta = resposta + `Tabuada do ${i}<br>`
+        resposta = resposta + `
+        <h1>Tabuada do ${i}</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Multiplicação</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>`
         for (let j = 1; j <= 10; j++) {
             let multiplicacao = i * j
             resposta = resposta + `
@@ -104,9 +132,10 @@ function exe5() {
                 <td>${i} x ${j}</td>
                 <td>${multiplicacao}</td>
             </tr>`
-            // resposta = resposta + `${i} x ${j} = ${multiplicacao}<br>`
         }
-        resposta = resposta + `<br>`
+        resposta = resposta + `
+            </tbody>
+        </table>`
     }
     document.getElementById('resultado').innerHTML = resposta
 }

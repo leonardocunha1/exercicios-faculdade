@@ -92,6 +92,15 @@ main {
     margin-top: 10px;
     color: rgb(128, 128, 128);
     font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.arearesposta.exe5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .ft {
     position: fixed;
