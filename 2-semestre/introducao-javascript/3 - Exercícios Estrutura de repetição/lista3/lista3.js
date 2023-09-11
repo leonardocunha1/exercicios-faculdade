@@ -75,6 +75,7 @@ function exe3() {
         //Daria para usar o let idade = Math.floor(Math.random() * 101) + 1 que sortearia um número inteiro entre 1 e 100
         if (idade <= 0) {
             alert(`Valor inválido`)
+            // i--  (pode usar o i-- para o valor idade inválida e, com isso, o valor não será contabilizado) ou pode deixar quieto e contabilizar a idade inválida
         }
         else {
             if (idade <= 15) {
@@ -225,13 +226,28 @@ function exe8() {
     let conteye = 0
     let cont1 = 0
     let mensagem = ``
+    let coloreye
+    let colorhair
     for (let i=1;i<=6;i++){
         //Entrada de dados
         let idade = Math.random() * 100 + 1
         let peso = Math.random() * 90 + 1
         let altura = Number(prompt("Digite a altura da pessoa " + i + ":"))
-        let coloreye = prompt("A - azul\nP - preto\nV - verde\nC - castanho\nDigite a cor dos olhos da pessoa " + i + ":")
-        let colorhair = prompt("L - louro\nP - preto\nR - ruivo\nC - castanho\nDigite a cor dos olhos da pessoa " + i + ":")
+        
+        do {
+            coloreye = prompt("A - azul\nP - preto\nV - verde\nC - castanho\nDigite a cor dos olhos da pessoa " + i + ":").toUpperCase()
+        } while (coloreye != 'A' && coloreye != 'P' && coloreye != 'V' && coloreye != 'C')
+
+        //se você quiser usar == (igual) em vez de != (diferente), você pode usar || (operador lógico OU) no lugar de && (operador lógico E) no código
+        // do {
+        //     coloreye = prompt("A - azul\nP - preto\nV - verde\nC - castanho\nDigite a cor dos olhos da pessoa " + i + ":").toUpperCase()
+        // } while (coloreye != 'A' && coloreye != 'P' && coloreye != 'V' && coloreye != 'C')
+
+        do {
+            colorhair = prompt("L - louro\nP - preto\nR - ruivo\nC - castanho\nDigite a cor dos olhos da pessoa " + i + ":").toUpperCase()
+        }
+        while (colorhair != 'P' && colorhair != 'L' && colorhair != 'R' && colorhair != 'C')
+
         //Cálculos e operações
         if (idade > 50 && peso < 60) {
             contpessoa = contpessoa + 1
@@ -350,3 +366,4 @@ function exe10() {
     mensagem = mensagem + `A soma dos números primos é ${acm1}`
     document.getElementById('resultado').innerHTML = mensagem
 }
+
