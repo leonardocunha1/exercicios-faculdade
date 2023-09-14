@@ -162,12 +162,12 @@ function ex4() {
 
 function ex5() {
     let logica = []
-    for (let i = 0 ; i < 4; i++) {
+    for (let i = 0 ; i < 15; i++) {
         logica.push(Number(prompt(`Digite o número da matrícula do aluno na matéria de Lógica: `)))
     }
 
     let ling = []
-    for (let i = 0 ; i < 4; i++) {
+    for (let i = 0 ; i < 10; i++) {
         ling.push(Number(prompt(`Digite o número da matrícula do aluno na matéria de Ling. Prog: `)))
     }
 
@@ -185,4 +185,48 @@ function ex5() {
     else {
         console.log(`Não há matrículas iguais nos dois vetores`)
     }
+}
+
+function ex6() {
+    //Entrada de dados
+    let nome = []
+    for (let i = 0; i < 10; i++) {
+        nome.push(prompt(`Digite o nome do ${i + 1}° vendedor: `))
+    }
+
+    let vendas = []
+    for (let i = 0; i < nome.length; i++) {
+        vendas.push(parseFloat(prompt(`Digite o total de venda do ${i + 1}° vendedor: `)))
+    }
+
+    let comissao = []
+    for (let i = 0; i < nome.length; i++) {
+        comissao.push(parseFloat(prompt(`Digite o percentual da comissão do ${i + 1}° vendedor: `)))
+    }
+    //Cálculo valor comissão de cada vendedor e o total das vendas
+    let valcomissao = []
+    let totalvendas = 0
+    for (let i = 0; i < nome.length; i++) {
+        valcomissao.push((comissao[i]/100) * vendas[i])
+        totalvendas = totalvendas + vendas[i]
+    }
+    //Cálculo maior e menor valor de comissão a receber
+    let maior = valcomissao[0]
+    let menor = valcomissao[0]
+    for (let i = 0; i < nome.length; i++) {
+        if (valcomissao[i] > maior) {
+            maior = valcomissao[i]
+        }
+        if (valcomissao[i] < menor) {
+            menor = valcomissao[i]
+        }        
+    }
+    //Saída de dados
+    for (let i = 0; i < nome.length; i++) {
+        console.log(`O Vendedor ${nome[i]} receberá R$${valcomissao[i].toFixed(2)} de comissão`)
+    }
+    console.log(`
+    O total de vendas foi de R$${totalvendas.toFixed(2)}
+    O maior valor de comissão a receber será do vendedor ${nome[valcomissao.indexOf(maior)]} no valor de R$${maior}
+    O menor valor de comissão a receber será do vendedor ${nome[valcomissao.indexOf(menor)]} no valor de R$${menor}`)
 }
