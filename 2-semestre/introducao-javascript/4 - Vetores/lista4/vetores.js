@@ -230,3 +230,45 @@ function ex6() {
     O maior valor de comissão a receber será do vendedor ${nome[valcomissao.indexOf(maior)]} no valor de R$${maior}
     O menor valor de comissão a receber será do vendedor ${nome[valcomissao.indexOf(menor)]} no valor de R$${menor}`)
 }
+
+function ex7() {
+    let vetor = []
+    for (let i=0;i<10;i++) {
+        vetor.push(Math.random()*21 - 10) //Numero aleatório gerado entre -10 e 10
+    }
+    let contador = 0
+    let soma = 0
+    for (let i=0;i<vetor.length;i++) {
+        if (vetor[i] < 0) {
+            contador++
+        }
+        if (vetor[i] > 0) {
+            soma = soma + vetor[i]
+        }
+    }
+    console.log(`
+    Há ${contador} números negativos neste vetor
+    A soma dos números positivos é ${soma.toFixed(2)}`)
+}
+
+function ex8() {
+    let nome = []
+    for (let i=0;i<7;i++) {
+        nome.push(prompt(`Digite o nome do ${i+1}° aluno: `))
+    }
+    let media = []
+    for (let i=0;i<nome.length;i++) {
+        media.push(Math.floor(Math.random()*10) + 1) //Gerando número aleatório entre 1 e 10 (incluindo 1 e 10)
+    }
+    let maior = media[0]
+    for (let i=0;i<nome.length;i++) {
+        if (media[i] > maior) {
+            maior = media[i]
+        }
+        if (media[i] < 7 ) { //nota que o aluno 
+            let restante = 7 - media[i]
+            console.log(`O ${nome[i]} precisa tirar ${restante} para passar no exame`)
+        }
+    }
+    console.log(`O ${nome[media.indexOf(maior)]} teve a maior média (${maior})`)
+}
