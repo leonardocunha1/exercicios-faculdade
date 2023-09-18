@@ -303,7 +303,7 @@ function ex8() {
         if (media[i] > maior) {
             maior = media[i]
         }
-        if (media[i] < 7 ) { //nota que o aluno 
+        if (media[i] < 7 ) { //nota que o aluno precisa tirar
             let restante = 7 - media[i]
             console.log(`O ${nome[i]} precisa tirar ${restante} para passar no exame`)
         }
