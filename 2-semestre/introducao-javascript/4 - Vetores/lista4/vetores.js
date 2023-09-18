@@ -135,12 +135,50 @@ function ex2() {
     `)
 }
 
-
+function exe3() {
+    let codigos = []
+    let estoque = []
+    //Entrada de dados
+    for(let i=0;i<10;i++) {
+        codigos.push(Number(prompt(`Informe o código do produto ${i+1}: `)))
+        estoque.push(Number(prompt(`Informe a quantidade em estoque do produto ${i+1}`)))
+    }
+    //Compra por cliente
+    let cliente = Number(prompt(`Informe o código do cliente que deseja comprar`))
+    do {
+        let produto = Number(prompt(`Informe o código do produto que deseja comprar`))
+        let qtde = Number(prompt(`Informe a quantidade que deseja comprar`))
+        //Verificando se o produto existe e se tem em estoque
+        let achou = false //produto não foi encontrado
+        for(let i=0;i<10;i++) {
+            if (codigos[i] == produto) { //encontrou o produto
+                achou = true
+                if(estoque[i] >= qtde) {
+                    alert(`Venda realizada com sucesso`)
+                    estoque[i] = estoque[i] - qtde //Atualiza o estoque
+                }
+                else {
+                    alert(`Não tem estoque suficiente`)
+                }
+            }
+        }
+        if (!achou) { //Não encontrou o produto. Transformando o achou em true caso ele não entre no if (codigos[i] == produto)
+            // Se a variável achou for avaliada como verdadeira, a negação ! a transformará em falsa, e o bloco de código dentro do if não será executado.
+            // Se a variável achou for avaliada como falsa, a negação ! a transformará em verdadeira, e o bloco de código dentro do if será executado.
+            alert(`Produto não encontrado`)
+        }
+        cliente = Number(prompt(`Informe o código do novo cliente ou 0 para encerrar`))
+    } while (cliente != 0)
+    let mensagem = ``
+    for (let i=0;i<10;i++) {
+        mensagem = mensagem + `Produto ${i+1} = ${codigos[i]} Estoque = ${estoque[i]}\n`
+    }
+}
 
 function ex4() {
     let numero = []
     //Obtendo e armazenando os números aleatórios no vetor
-    for (let i = 0 ; i < 7; i++) {
+    for (let i = 0 ; i < 15; i++) {
         numero.push(Math.floor(Math.random()*6) + 25) //número aleatório entre 25 e 30
     }
     //Verificando se há valores iguais a 30 no vetor
