@@ -303,7 +303,7 @@ function ex8() {
         if (media[i] > maior) {
             maior = media[i]
         }
-        if (media[i] < 7 ) { //nota que o aluno precisa tirar
+        if (media[i] < 7 ) { //nota que o aluno 
             let restante = 7 - media[i]
             console.log(`O ${nome[i]} precisa tirar ${restante} para passar no exame`)
         }
@@ -311,3 +311,75 @@ function ex8() {
     console.log(`O ${nome[media.indexOf(maior)]} teve a maior média (${maior})`)
 }
 
+function prova() {
+    let modelo = []
+    let estoque = []
+    let classificacao = []
+
+    for (let i=0;i<10;i++) {
+        modelo.push(prompt(`Digite o nome do modelo do ${i+1}° computador: `))
+        estoque.push(Math.floor(Math.random()*100) + 1) //Gerando uma quantidade de estoque aleatória entre 1 e 100
+    }
+    for (let i=0;i<10;i++) {
+        let classific = prompt(`Digite a classificação do ${i+1}° computador (gamer, notebook, desktop): `)
+        if (classific != "gamer" && classific != "notebook" && classific != "desktop") {
+            i--
+            alert(`Valor inválido`)
+        }
+        else {
+            classificacao.push(classific)
+        }
+    }
+    
+    let cont = 0
+    let cont1 = 0
+    for (let i = 0; i<4;i++) {
+        let produto = prompt(`Informe o modelo do produto que deseja comprar: `)
+        let classif = prompt(`Informe a classificação do produto que deseja comprar: `)
+        let qtd = Number(prompt(`Informe a quantidade que deseja comprar: `))
+        //Verificando se o produto existe e se tem em estoque
+        let achou = false
+        for(let i = 0; i<10;i++) {
+            if (modelo[i] == produto && classif == classificacao[i]) {
+                achou = true
+                if (estoque[i] >= qtd) {
+                    alert(`Venda realizada com sucesso!`)
+                    estoque[i] = estoque[i] - qtd
+                }
+                else {
+                    alert(`Estoque insuficiente`)
+                    cont = cont + 1
+                }
+            }
+        }
+        if (!achou) {
+            alert(`Modelo não encontrado`)
+            cont1 = cont1 + 1
+        }
+        if (cont == 1 || cont1 == 1) {
+            break //cancelando a compra caso não a quantidade de estoque for insuficiente ou o modelo não for encontrado
+        }
+    }
+
+    let maior
+    let menor
+    for (let i=0;i<10;i++) {
+        if (classificacao[i] == "notebook") {
+            maior = estoque[i]
+            menor = estoque[i]
+            break
+        }
+    }
+
+    for (let i=0;i<10;i++) {
+        if (classificacao[i] == "notebook") {
+            if (estoque[i] > maior) {
+                maior = estoque[i]
+            }
+            if (estoque[i] < menor) {
+                menor = estoque[i]
+            }
+        }
+    }
+    console.log(`O modelo de notebook com maior estoque é o modelo ${modelo[estoque.indexOf(maior)]} e o menor estoque é o modelo ${modelo[estoque.indexOf(menor)]}`)
+}
