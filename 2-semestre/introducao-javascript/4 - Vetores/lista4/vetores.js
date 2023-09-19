@@ -310,3 +310,4 @@ function ex8() {
     }
     console.log(`O ${nome[media.indexOf(maior)]} teve a maior média (${maior})`)
 }
+
