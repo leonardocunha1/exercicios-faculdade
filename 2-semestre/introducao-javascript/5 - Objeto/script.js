@@ -35,7 +35,7 @@ function exemplo(){
 
 function exercicio02() {
     let vetorBike = []
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 10; i++) {
         let objetoBike = {
             //Entrada de dados
             marcaBike: prompt(`Informe a marca da bike ${i+1}`).toUpperCase(),
@@ -97,7 +97,7 @@ function exercicio02() {
 
     //Contabilizando as bikes aro 29
     let contBike29 = 0;
-    for (let i = 0; i < vetorBike; i++) {
+    for (let i = 0; i < vetorBike.length; i++) {
         if (vetorBike[i].aroBike == 29) {
             contBike29++;
         }
@@ -105,11 +105,11 @@ function exercicio02() {
     console.log(`O número de bikes com aro 29 é: ${countAro29}`);
 
     //Descobrindo o maior quadro da bike
-    let maiorQuadro = vetorBike[0]
+    let maiorQuadro = vetorBike[0];
     for (let i = 1; i < vetorBike.length; i++) {
-        if (maiorQuadro > vetorBike[i]) {
-            
+        if (maiorQuadro.quadroBike > vetorBike[i].quadroBike) {
+            maiorQuadro = vetorBike[i];
         }
     }
-
+    console.log(`A bike com maior quadro é: ${maiorQuadro}`);
     }
