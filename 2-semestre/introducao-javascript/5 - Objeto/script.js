@@ -21,19 +21,20 @@ function exemplo(){
     objeto2.classificacao = prompt("Informe a classificao")
 }
 
-/*Faça um programa em JavaScript que solicite ao usuário dados de 10 bikes. Cada bike deve conter informações como marca, modelo, quadro, aro, ano e preço. Após a entrada de dados, o programa deve calcular e exibir ao usuário:
 
-1) a média de preço das bikes
+function exercicio01() {
+    /*Faça um programa em JavaScript que solicite ao usuário dados de 10 bikes. Cada bike deve conter informações como marca, modelo, quadro, aro, ano e preço. Após a entrada de dados, o programa deve calcular e exibir ao usuário:
 
-2) qual a bike é mais antiga, deve-se considerar empates
+    1) a média de preço das bikes
 
-3) quais as bikes são do marca Caloi
+    2) qual a bike é mais antiga, deve-se considerar empates
 
-4) quantas bikes possuem aro 29
+    3) quais as bikes são do marca Caloi
 
-5) qual bike possui maior quadro, pode-se desconsiderar empates */
+    4) quantas bikes possuem aro 29
 
-function exercicio02() {
+    5) qual bike possui maior quadro, pode-se desconsiderar empates */
+
     let vetorBike = []
     for (let i = 0; i < 10; i++) {
         let objetoBike = {
@@ -113,3 +114,50 @@ function exercicio02() {
     }
     console.log(`A bike com maior quadro é: ${maiorQuadro}`);
     }
+
+    function exercicio02() {
+        /*Faça um programa em JS que guarde em um vetor dados de 5 farmacias: código, Nome e endereço 
+        Obs* Não é possível crias duas farmácias com o mesmo código
+
+        Em seguida, guarde em um vetor dados de 10 remédios: código da farmácia, nome do remédio, qtde em estoque e preço
+        Não é possível cadastrar um remédio de uma farmácia que não exista
+
+        Ao final, efetive a compra de 5 remédios, e atualize o estoque. Considere que a farmácia ou o remédio podem não existir, e cancela a compra*/
+        let vetorFarmacia = [];
+
+        for (let i = 0; i < 5; i++) {
+            let objetoFarmacia = {
+                //Entrada de dados
+                codigoFarmacia: Number(prompt(`Informe o código da farmácia ${i + 1}`)),
+                nomeFarmacia: prompt(`Informe o nome da farmácia ${i + 1}`).toUpperCase(),
+                enderecoFarmacia: prompt(`Informe o endereço da farmácia ${i + 1}`)
+            };
+        
+            // Validações
+            while (objetoFarmacia.codigoFarmacia < 0) {
+                objetoFarmacia.codigoFarmacia = Number(prompt(`Informe um valor positivo para o código`));
+            }
+        
+            // Verificar se o código da farmácia já existe no vetor
+           
+            /*
+            let codigoExistente = vetorFarmacia.some(farmacia => farmacia.codigoFarmacia == objetoFarmacia.codigoFarmacia);
+        
+            if (codigoExistente) {
+                console.log("Esta farmácia já existe");
+                i--; // Reverta o incremento para que a mesma posição seja solicitada novamente
+            } else {
+                // Se o código não existe, adicione o objeto ao vetor
+                vetorFarmacia.push(objetoFarmacia);
+            }*/
+            
+            while (vetorFarmacia.some(farmacia => farmacia.codigoFarmacia === objetoFarmacia.codigoFarmacia)) {
+                objetoFarmacia.codigoFarmacia = Number(prompt(`Informe um código de farmácia que não exista`));
+            }
+            vetorFarmacia.push(objetoFarmacia);
+            
+        }
+        
+    }
+
+
