@@ -113,51 +113,119 @@ function exercicio01() {
         }
     }
     console.log(`A bike com maior quadro é: ${maiorQuadro}`);
+}
+
+function exercicio02() {
+    /*
+    Faça um programa em JavaScript que realiza o seguinte:
+
+    1. Crie um vetor para armazenar dados de 5 farmácias, incluindo código, nome e endereço.
+    2. Garanta que não é possível criar duas farmácias com o mesmo código.
+
+    3. Em seguida, crie um vetor para armazenar dados de 10 remédios, incluindo código da farmácia, nome do remédio, quantidade em estoque e preço.
+    4. Não é possível cadastrar um remédio de uma farmácia que não exista.
+
+    5. Efetue a compra de 5 remédios e atualize o estoque. Considere que a farmácia ou o remédio podem não existir, e, nesse caso, a compra é cancelada.
+    */
+
+    // Vetor para armazenar dados das farmácias
+    let vetorFarmacia = [];
+
+    // Laço para cadastrar 5 farmácias
+    for (let i = 0; i < 5; i++) {
+        let objetoFarmacia = {
+            codigoFarmacia: Number(prompt(`Informe o código da farmácia ${i + 1}`)),
+            nomeFarmacia: prompt(`Informe o nome da farmácia ${i + 1}`).toUpperCase(),
+            enderecoFarmacia: prompt(`Informe o endereço da farmácia ${i + 1}`)
+        };
+    
+        // Garante que o código da farmácia seja positivo
+        while (objetoFarmacia.codigoFarmacia < 0) {
+            objetoFarmacia.codigoFarmacia = Number(prompt(`Informe um valor positivo para o código`));
+        }
+    
+        // Garante que não existam duas farmácias com o mesmo código
+        while (vetorFarmacia.some(farmacia => farmacia.codigoFarmacia === objetoFarmacia.codigoFarmacia)) {
+            objetoFarmacia.codigoFarmacia = Number(prompt(`Informe um código de farmácia que não exista`));
+        }
+        vetorFarmacia.push(objetoFarmacia);
     }
 
-    function exercicio02() {
-        /*Faça um programa em JS que guarde em um vetor dados de 5 farmacias: código, Nome e endereço 
-        Obs* Não é possível crias duas farmácias com o mesmo código
-
-        Em seguida, guarde em um vetor dados de 10 remédios: código da farmácia, nome do remédio, qtde em estoque e preço
-        Não é possível cadastrar um remédio de uma farmácia que não exista
-
-        Ao final, efetive a compra de 5 remédios, e atualize o estoque. Considere que a farmácia ou o remédio podem não existir, e cancela a compra*/
-        let vetorFarmacia = [];
-
-        for (let i = 0; i < 5; i++) {
-            let objetoFarmacia = {
-                //Entrada de dados
-                codigoFarmacia: Number(prompt(`Informe o código da farmácia ${i + 1}`)),
-                nomeFarmacia: prompt(`Informe o nome da farmácia ${i + 1}`).toUpperCase(),
-                enderecoFarmacia: prompt(`Informe o endereço da farmácia ${i + 1}`)
-            };
-        
-            // Validações
-            while (objetoFarmacia.codigoFarmacia < 0) {
-                objetoFarmacia.codigoFarmacia = Number(prompt(`Informe um valor positivo para o código`));
-            }
-        
-            // Verificar se o código da farmácia já existe no vetor
-           
-            /*
-            let codigoExistente = vetorFarmacia.some(farmacia => farmacia.codigoFarmacia == objetoFarmacia.codigoFarmacia);
-        
-            if (codigoExistente) {
-                console.log("Esta farmácia já existe");
-                i--; // Reverta o incremento para que a mesma posição seja solicitada novamente
-            } else {
-                // Se o código não existe, adicione o objeto ao vetor
-                vetorFarmacia.push(objetoFarmacia);
-            }*/
-            
-            while (vetorFarmacia.some(farmacia => farmacia.codigoFarmacia === objetoFarmacia.codigoFarmacia)) {
-                objetoFarmacia.codigoFarmacia = Number(prompt(`Informe um código de farmácia que não exista`));
-            }
-            vetorFarmacia.push(objetoFarmacia);
-            
+    // Vetor para armazenar dados dos remédios
+    let remedios = [];
+    
+    // Laço para cadastrar 10 remédios
+    for (let i = 0; i < 10; i++) {
+        let objetoRemedio = {
+            codFarmacia: Number(prompt(`Digite o código da farmácia`)),
+            nomeRemedio: prompt(`Digite o nome do remédio`),
+            qtdRemedio: parseInt(prompt(`Digite a quantidade do remédio`)),
+            precoRemedio: parseFloat(prompt(`Digite o valor do remédio`))
         }
         
+        // Garante que o código da farmácia seja válido
+        while (objetoRemedio.codFarmacia < 0 || !vetorFarmacia.some(item => item.codigoFarmacia === objetoRemedio.codFarmacia)) {
+            objetoRemedio.codFarmacia = Number(prompt(`Informe um código de farmácia válido`));
+        }
+        
+        remedios.push(objetoRemedio);
     }
+
+    // Laço para efetuar a compra de 5 remédios
+    for (let i = 0; i < 5; i++) {
+        let compra = {
+            codigoCompra: parseInt(prompt(`Informe o código da farmácia`)),
+            remedioCompra: prompt(`Informe o nome do remédio`)
+        }
+        
+        // Encontra o remédio desejado
+        let remedio = remedios.find(item => (item.codFarmacia === compra.codigoCompra && item.nomeRemedio === compra.remedioCompra));
+        
+        if (remedio) {
+            let quantidadeCompra = parseInt(prompt(`Informe a quantidade que deseja comprar do remédio ${remedio.nomeRemedio}`));
+            
+            if (quantidadeCompra <= remedio.qtdRemedio) {
+                remedio.qtdRemedio -= quantidadeCompra;
+                alert(`Compra efetuada com sucesso. Valor total: R$ ${(quantidadeCompra * remedio.precoRemedio).toFixed(2)}.`);
+            } else {
+                alert(`Não há quantidade suficiente em estoque para a compra.`);
+            }
+        } else {
+            alert(`Farmácia ou remédio não encontrado. Compra cancelada.`);
+        }
+    }
+}
+
+function exercicio03() {
+    /*
+    Faça um programa em JS que guarde em um vetor dados de 5  partidos políticos: código, nome, sigla, presidente, nro de políticos
+
+    Em seguida, guarde em um vetor dados de 5 políticos: código do partido, nome do político, qtde de votos na eleição atual (inicie com 0) e cargo que ocupa
+
+    Não é possível crias dois partidos com o mesmo código
+
+    Não é possível cadastrar um político de um partido que não exista
+
+    Ao final, inicie uma votação, faça o cadastro de 10 votos, e atualize a qtde de votos do político. Não é possível votar em candidato que não exista, votar em um candidato de um partido errado.
+
+    Finalmente, mostrar os dados do político que teve mais votos.
+    */
+    let vetPartidoPolitico = [];
+    for (let i = 0; i < 5; i++) {
+        let objPartidoPolitico = {
+            codigo: parseInt(prompt(`Digite o código do partido político`)),
+            nome: String(prompt(`Digite o nome do partido político`)),
+            sigla: String(prompt(`Digite a sigla do partido político`)),
+            presidente: String(prompt(`Digite o nome do presidente do partido`)),
+            numPoliticos: parseInt(`Digite o número de políticos`)
+        }
+        while (objPartidoPolitico.numPoliticos < 0) {
+            objPartidoPolitico.numPoliticos = parseInt(prompt(`Digite um valor positivo para a quantidade de políticos`))
+        }
+    }
+}
+
+
+
 
 
