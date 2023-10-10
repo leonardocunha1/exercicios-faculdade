@@ -210,6 +210,8 @@ function exercicio03() {
 
     Finalmente, mostrar os dados do político que teve mais votos.
     */
+
+    //Cadastrar os partidos
     let vetPartidoPolitico = [];
     for (let i = 0; i < 5; i++) {
         let objPartidoPolitico = {
@@ -217,12 +219,68 @@ function exercicio03() {
             nome: String(prompt(`Digite o nome do partido político`)),
             sigla: String(prompt(`Digite a sigla do partido político`)),
             presidente: String(prompt(`Digite o nome do presidente do partido`)),
-            numPoliticos: parseInt(`Digite o número de políticos`)
+            numPoliticos: parseInt(prompt(`Digite o número de políticos`))
         }
+        //Verifica se o número de políticos é menor do que 0
         while (objPartidoPolitico.numPoliticos < 0) {
-            objPartidoPolitico.numPoliticos = parseInt(prompt(`Digite um valor positivo para a quantidade de políticos`))
+            objPartidoPolitico.numPoliticos = parseInt(prompt(`Digite um valor válido para a quantidade de políticos`));
+        }
+        // Verifica se já existe um partido com o mesmo código ou se ele é menor do que 0
+        while (objPartidoPolitico.codigo < 0 || vetPartidoPolitico.some(partido => partido.codigo === objPartidoPolitico.codigo)) {
+           objPartidoPolitico.codigo = parseInt(prompt(`Código inválido ou já existente. Digite outro código:`));
+        }
+        // Verifica se já existe uma sigla igual a outra
+        while (vetPartidoPolitico.some(partido => partido.sigla === objPartidoPolitico.sigla)) {
+            objPartidoPolitico.sigla = prompt(`Sigla já existente. Digite outra:`);
+        }
+
+        vetPartidoPolitico.push(objPartidoPolitico);
+    }
+    // Cadastrar os políticos
+    let vetPolitico = [];
+    for (let i = 0; i < 5; i++) {
+        let objPolitico = {
+            codigoPartido: parseInt(prompt(`Digite o código do partido do político`)),
+            nome: String(prompt(`Digite o nome do político`)),
+            qtdVotos: 0,
+            cargo: String(prompt(`Digite o cargo do político`))
+        }
+        // Verifica se o partido do político existe
+        while (!vetPartidoPolitico.some(item => item.codigo === objPolitico.codigoPartido)) {
+            objPolitico.codigoPartido = parseInt(prompt(`Partido não encontrado, informe um já existente`));
+        }
+        // Verifica se já existe um político com o mesmo nome
+        while (vetPolitico.some(item => item.nome === objPolitico.nome)) {
+            objPolitico.nome = String(prompt(`Nome já existente, informe outro`))
+        }
+
+        vetPolitico.push(objPolitico);
+        alert(`Político ${objPolitico.nome} cadastrado com sucesso`);
+    }
+    // Realizando 10 votos
+    for (let i = 0; i < 10; i++) {
+        let votacao = {
+            partido: parseInt(prompt(`Informe o código do partido`)),
+            nomeCandidato: prompt(`Informe o nome do candidato`)
+        }
+        let candidato = vetPolitico.find(politico => politico.codigoPartido === votacao.partido && politico.nome === votacao.nomeCandidato);
+
+        if (candidato) {
+            candidato.qtdVotos++;
+            alert(`Voto registrado com sucesso para ${candidato.nome}`);
+        } else {
+            alert(`Candidato não encontrado. Voto não registrado.`);
+        }
+
+    }
+    // Político com maior quantidade de votos
+    let candidatoMaisVotado = vetPolitico[0];
+    for (let i = 0; i < vetPolitico.length; i++) {
+        if (vetPolitico[i].qtdVotos > candidatoMaisVotado.qtdVotos) {
+            candidatoMaisVotado = vetPolitico[i]
         }
     }
+    console.log(candidatoMaisVotado)
 }
 
 
