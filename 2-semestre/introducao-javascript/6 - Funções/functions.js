@@ -69,18 +69,15 @@ function bikeModularizado() {
     5) qual bike possui maior quadro, pode-se desconsiderar empates */
 
     function promptBike() {
- 
-        for (let i = 0; i < 10; i++) {
-            let objetoBike = {
-                //Entrada de dados
-                marcaBike: prompt(`Informe a marca da bike ${i+1}`).toUpperCase(),
-                modeloBike: prompt(`Informe o modelo da bike ${i+1}`).toUpperCase(),
-                quadroBike: parseInt(prompt(`Informe o quadro da bike ${i+1}`)),
-                aroBike: Number(prompt(`Informe o aro da bike ${i+1}`)),
-                yearBike: Number(prompt(`Informe o ano da bike ${i+1}`)),
-                priceBike: Number(prompt(`Informe o valor da bike ${i+1}`))
-        }
-    }
+        let objetoBike = {
+            //Entrada de dados
+            marcaBike: prompt(`Informe a marca da bike ${i+1}`).toUpperCase(),
+            modeloBike: prompt(`Informe o modelo da bike ${i+1}`).toUpperCase(),
+            quadroBike: parseInt(prompt(`Informe o quadro da bike ${i+1}`)),
+            aroBike: Number(prompt(`Informe o aro da bike ${i+1}`)),
+            yearBike: Number(prompt(`Informe o ano da bike ${i+1}`)),
+            priceBike: Number(prompt(`Informe o valor da bike ${i+1}`))
+}
 
     // let vetorBike = []
     // for (let i = 0; i < 10; i++) {
