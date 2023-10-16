@@ -21,7 +21,6 @@ function exemplo(){
     objeto2.classificacao = prompt("Informe a classificao")
 }
 
-
 function exercicio01() {
     /*Faça um programa em JavaScript que solicite ao usuário dados de 10 bikes. Cada bike deve conter informações como marca, modelo, quadro, aro, ano e preço. Após a entrada de dados, o programa deve calcular e exibir ao usuário:
 
