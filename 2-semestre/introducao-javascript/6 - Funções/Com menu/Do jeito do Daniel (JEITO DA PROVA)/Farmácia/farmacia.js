@@ -84,6 +84,8 @@ function main() {
                 break;
             case 0:
                 alert("Programa finalizado");
+                console.log(farmacias);
+                console.log(remedios);
                 break;
             default:
                 alert("Opção inválida");
