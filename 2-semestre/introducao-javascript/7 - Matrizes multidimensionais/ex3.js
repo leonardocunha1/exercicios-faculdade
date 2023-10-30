@@ -27,7 +27,7 @@ function maiorElemento(matriz) {
             }
         }
     }
-    return { valor: maior, linha: linha, coluna: coluna };
+    return [maior, linha, coluna];
 }
 
 function menorElemento(matriz) {
@@ -43,7 +43,7 @@ function menorElemento(matriz) {
             }
         }
     }
-    return { valor: menor, linha: linha, coluna: coluna };
+    return [menor, linha, coluna];
 }
 
 function main() {
@@ -51,9 +51,9 @@ function main() {
     lerMatriz(matriz);
     console.log(matriz);
     let maior = maiorElemento(matriz);
-    console.log(`O maior elemento da matriz é ${maior.valor} e sua posição é [${maior.linha}, ${maior.coluna}]`);
+    console.log(`O maior elemento da matriz é ${maior[0]} e sua posição é [${maior[1]}, ${maior[2]}]`);
     let menor = menorElemento(matriz);
-    console.log(`O menor elemento da matriz é ${menor.valor} e sua posição é [${menor.linha}, ${menor.coluna}]`);
+    console.log(`O menor elemento da matriz é ${menor[0]} e sua posição é [${menor[1]}, ${menor[2]}]`);
 }
 
 main();
