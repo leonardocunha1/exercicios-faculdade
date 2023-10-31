@@ -20,29 +20,40 @@ function lerNomes(vetor) {
     }
 }
 
-function mediaAluno(matriz) {
-    let aux = [];
+function calcularMediaAluno(matriz) {
+    let medias = [];
     for (let i = 0; i < 15; i++) {
         let acm = 0;
         for (let j = 0; j < 5; j++) {
             acm += matriz[i][j];
         }
-        aux.push(acm / 5);
+        medias.push(acm / 5);
     }
-    return aux;
+    return medias;
 }
 
-function verificaAprovacao(matriz) {
-    let aux = mediaAluno(matriz);
-    let msg = [];
+function calcularMediaProva(matriz) {
+    let acm = 0;
     for (let i = 0; i < 15; i++) {
-        if (aux[i] >= 6) {
-            msg.push(`Aprovado`);
-        } else {
-            msg.push(`Reprovado`);
+        for (let j = 0; j < 5; j++) {
+            acm += matriz[i][j];
         }
     }
-    return msg;
+    let mediaProva = acm / (15 * 5);
+    return mediaProva;
+}
+
+function verificarAprovacao(matriz) {
+    let medias = calcularMediaAluno(matriz);
+    let mensagens = [];
+    for (let i = 0; i < 15; i++) {
+        if (medias[i] >= 6) {
+            mensagens.push(`Aprovado`);
+        } else {
+            mensagens.push(`Reprovado`);
+        }
+    }
+    return mensagens;
 }
 
 function main() {
@@ -55,12 +66,15 @@ function main() {
     lerNomes(nomes);
     console.log(nomes);
 
-    let media = mediaAluno(matriz);
-    let mensagem = verificaAprovacao(matriz);
+    let mediasAlunos = calcularMediaAluno(matriz);
+    let mensagens = verificarAprovacao(matriz);
 
     for (let i = 0; i < 15; i++) {
-        console.log(`O aluno ${nomes[i]} teve média ${media[i]} e foi ${mensagem[i]}`);
+        console.log(`O aluno ${nomes[i]} teve média ${mediasAlunos[i]} e foi ${mensagens[i]}`);
     }
+
+    let mediaSala = calcularMediaProva(matriz);
+    console.log(`A média da sala foi ${mediaSala.toFixed(2)}`);
 }
 
 main();
