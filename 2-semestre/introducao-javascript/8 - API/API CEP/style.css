@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    height: 100vh;
+    background-color: rgb(170, 9, 170);
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    width: 300px;
+    background-color: white;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.dados {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
