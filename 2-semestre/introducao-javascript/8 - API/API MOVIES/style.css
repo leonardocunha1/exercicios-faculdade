@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #7c0899;
+    background-color: #4a045c;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
 }
 
 form {
-    width: 80%;
     padding: 20px;
     margin: 20px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -23,8 +26,28 @@ form {
     border-radius: 8px;
 }
 
-.entrada {
+.title {
     text-align: center;
+    border-bottom: 1px solid blueviolet;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.entrada label {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.entrada input {
+    border-radius: 8px;
+    border: 2px solid rgb(114, 114, 114);
+    box-shadow: rgb(114, 114, 114) 2px 2px 3px;
+    padding: 5px;
+    margin-top: 20px;
 }
 
 .data-main {
@@ -35,6 +58,12 @@ form {
 
 .data {
     display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+.data:nth-child(13) {
+    border: none;
 }
 
 .data .title {
@@ -42,6 +71,32 @@ form {
     font-weight: bold;
 }
 
-.aux {
+.data-info {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.data img {
+    width: 70%;
+}
+.aux2 {
     display: none;
+}
+
+button {
+    border-radius: 8px;
+    border: 2px solid rgb(114, 114, 114);
+    box-shadow: rgb(114, 114, 114) 2px 2px 3px;
+    background-color: #4a045cda;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(114, 114, 114);
+    color: black;
 }

@@ -17,7 +17,7 @@ async function api() {
     document.querySelector(".imdbRating").textContent = dados.imdbRating;
     document.querySelector(".imdbVotes").textContent = dados.imdbVotes;
 
-    document.querySelector(".aux1").style.display = "none";
+    // document.querySelector(".aux1").style.display = "none";
     
     document.querySelector(".aux2").style.display = "block";
 }
