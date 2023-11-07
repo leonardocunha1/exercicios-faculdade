@@ -1,18 +1,23 @@
-// A função deve ser assíncrona pois tem uma chamada síncrona dentro dela
 async function api() {
-    // Recupera o CEP informado pelo usuário
-    let cep = document.getElementById("cep").value;
-    // Chamando a API usando a função fetch do JavaScript
-    let resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`); //O await faz com que a função espere a resposta da API
-    // Os dados chegam no formato string, então precisamos converter para JSON
-    let dados = await resposta.json();
-    // Coloca o logradouro no campo de endereço
-    document.getElementById("logradouro").value = dados.logradouro;
-    document.querySelector("#bairro").value = dados.bairro;
-    document.querySelector("#localidade").value = dados.localidade;
-    document.querySelector("#uf").value = dados.uf;
-    document.querySelector("#ddd").value = dados.ddd;
-
     let movie = document.getElementById("movie").value;
-    let response = await fetch(`http://www.omdbapi.com/?apikey=8e6149a9&t=${movie}`);
+    let dados = await fetch(`https://www.omdbapi.com/?t=${movie}&apikey=8e6149a9`).then(response => response.json());
+    document.querySelector(".title").textContent = dados.Title;
+    document.querySelector(".year").textContent = dados.Year;
+    document.querySelector(".released").textContent = dados.Released;
+    document.querySelector(".runtime").textContent = dados.Runtime;
+    document.querySelector(".genre").textContent = dados.Genre;
+    document.querySelector(".director").textContent = dados.Director;
+    document.querySelector(".writer").textContent = dados.Writer;
+    document.querySelector(".actors").textContent = dados.Actors;
+    document.querySelector(".plot").textContent = dados.Plot;
+    document.querySelector(".language").textContent = dados.Language;
+    document.querySelector(".country").textContent = dados.Country;
+    document.querySelector(".awards").textContent = dados.Awards;
+    document.querySelector(".poster").src = dados.Poster;
+    document.querySelector(".imdbRating").textContent = dados.imdbRating;
+    document.querySelector(".imdbVotes").textContent = dados.imdbVotes;
+
+    document.querySelector(".aux1").style.display = "none";
+    
+    document.querySelector(".aux2").style.display = "block";
 }
