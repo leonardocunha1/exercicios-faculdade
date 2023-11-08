@@ -14,18 +14,18 @@ async function api() {
         document.querySelector(".website").textContent = dados.website;
         document.querySelector(".company").textContent = dados.company.name;
 
-        // document.querySelector(".aux2").style.display = "block";
-        // document.querySelector(".aux1").style.display = "none";
-        document.querySelectorAll(".aux2").forEach(element => { element.style.display = "block" });
-        document.querySelectorAll(".aux1").forEach(element => { element.style.display = "none" });
+        const elementsToDisplay = document.querySelectorAll(".aux2");
+        const elementsToHide = document.querySelectorAll(".aux1");
+        elementsToDisplay.forEach((element) => (element.style.display = "block"));
+        elementsToHide.forEach((element) => (element.style.display = "none"));
 
-        document.querySelector("#reset").addEventListener("click", () => {
-            // document.querySelector(".aux2").style.display = "none";
-            // document.querySelector(".aux1").style.display = "block";
-            document.querySelectorAll(".aux2").forEach(element => { element.style.display = "none" });
-            document.querySelectorAll(".aux1").forEach(element => { element.style.display = "block" });
+        let exibicaoLayout = function () {
+            elementsToDisplay.forEach(element => { element.style.display = "none" });
+            elementsToHide.forEach(element => { element.style.display = "block" });
             document.getElementById("user").value = "";
-        })
+        }
+
+        document.querySelector("#reset").addEventListener("click", exibicaoLayout)
     } else {
         alert("Digite um número de usuário válido!")
     }
