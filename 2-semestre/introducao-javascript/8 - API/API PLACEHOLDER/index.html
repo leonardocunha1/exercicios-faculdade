@@ -1,16 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <label for="user">Digite o ID</label>
-    <input type="number" id="user">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <button type="button">Search</button>
+  <body>
+    <form action="">
+      <h1>Consultar Usuário</h1>
+      <div class="entrada aux1">
+        <input type="number" id="user" placeholder="Digite o ID" />
+      </div>
+
+      <div class="data-main aux2">
+        <div class="data">
+          <p class="data-info">Id</p>
+          <p class="id"></p>
+        </div>
+        <div class="data">
+          <p class="data-info">Name:</p>
+          <p class="name"></p>
+        </div>
+        <div class="data">
+          <p class="data-info">Username:</p>
+          <p class="username"></p>
+        </div>
+        <div class="data">
+          <p class="data-info">Email:</p>
+          <p class="email"></p>
+        </div>
+        <div class="data borda center">
+          <p class="data-info">Adress</p>
+          <div class="endereco">
+            <div class="linha">
+              <div class="info">
+                <p class="data-info">Street:</p>
+                <p class="street"></p>
+              </div>
+              <div class="info">
+                <p class="data-info">Suite:</p>
+                <p class="suite"></p>
+              </div>
+            </div>
+            <div class="linha">
+              <div class="info">
+                <p class="data-info">City:</p>
+                <p class="city"></p>
+              </div>
+              <div class="info">
+                <p class="data-info">Zipcode:</p>
+                <p class="zipcode"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="data">
+          <p class="data-info">Phone:</p>
+          <p class="phone"></p>
+        </div>
+        <div class="data">
+          <p class="data-info">Website:</p>
+          <p class="website"></p>
+        </div>
+        <div class="data">
+          <p class="data-info">Company:</p>
+          <p class="company"></p>
+        </div>
+      </div>
+
+      <button type="button" onclick="api()">Search</button>
+    </form>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
