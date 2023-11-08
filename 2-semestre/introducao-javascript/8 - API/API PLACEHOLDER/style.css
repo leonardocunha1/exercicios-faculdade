@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -45,6 +46,7 @@ form h1 {
   box-shadow: rgb(0, 0, 0) 2px 2px 3px;
   padding: 5px;
   margin-top: 20px;
+  width: 100%;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -64,6 +66,10 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+.data:nth-last-child(1) {
+  border-bottom: none;
 }
 
 .data-info {
@@ -96,7 +102,7 @@ input[type="number"]::-webkit-outer-spin-button {
   display: none;
 }
 
-button {
+.botao1 {
   border-radius: 8px;
   box-shadow: rgb(0, 0, 0) 2px 2px 3px;
   background-color: #4a045cda;
@@ -111,4 +117,15 @@ button:hover {
   cursor: pointer;
   background-color: rgb(114, 114, 114);
   color: black;
+}
+
+.botao2 {
+
+    width: 200px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: rgb(0, 0, 0) 2px 2px 3px;
+    font-size: 20px;
+    font-weight: 700;
 }
