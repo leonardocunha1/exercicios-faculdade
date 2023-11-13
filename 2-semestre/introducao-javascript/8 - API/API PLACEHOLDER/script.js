@@ -19,10 +19,14 @@ async function api() {
         elementsToDisplay.forEach((element) => (element.style.display = "block"));
         elementsToHide.forEach((element) => (element.style.display = "none"));
 
+        const dadosUsuario = document.querySelector("h1");
+        dadosUsuario.textContent = `Dados do usuário`;
+
         let exibicaoLayout = function () {
             elementsToDisplay.forEach(element => { element.style.display = "none" });
             elementsToHide.forEach(element => { element.style.display = "block" });
             document.getElementById("user").value = "";
+            dadosUsuario.textContent = "Consultar Usuário";
         }
 
         document.querySelector("#reset").addEventListener("click", exibicaoLayout)
