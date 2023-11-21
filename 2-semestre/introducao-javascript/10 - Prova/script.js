@@ -36,17 +36,18 @@ function mediaCarros(vetorCarros, matrizNotas){
         for(let j=0;j<5;j++){
             soma += matrizNotas[i][j];
         }
-        console.log(`A média do carro ${vetorCarros[i].modelo} é ${soma/5}`);
+        vetorCarros[i].media = soma / 5; // Armazenando a média no vetorCarros
+        console.log(`A média do carro da marca ${vetorCarros[i].marca} e modelo ${vetorCarros[i].modelo} é ${soma / 5}`);
     }
 }
 
 // Calcula a menor nota de cada avaliação
-function menorNota(vetorCarros, matrizNotas){
-    for(let i=0;i<4;i++) {
-        let menor = matrizNotas[i][0];
-        let modelo = vetorCarros[i].modelo;
-        for(let j=0;j<5;j++){
-            if(matrizNotas[i][j] < menor){
+function menorNota(vetorCarros, matrizNotas) {
+    for (let j = 0; j < 5; j++) {
+        let menor = matrizNotas[0][j];
+        let modelo = vetorCarros[0].modelo;
+        for (let i = 0; i < 4; i++) {
+            if (matrizNotas[i][j] < menor) {
                 menor = matrizNotas[i][j];
                 modelo = vetorCarros[i].modelo;
             }

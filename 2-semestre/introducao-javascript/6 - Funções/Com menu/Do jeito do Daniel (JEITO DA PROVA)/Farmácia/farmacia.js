@@ -26,7 +26,7 @@ function cadastraFarmacia(vetorFarmacia){
 function cadastraRemedio(vetorFarmacia,vetorRemedio) {
     let objetoRemedio = {
         codFarmacia: Number(prompt(`Digite o código da farmácia`)),
-        nomeRemedio: prompt(`Digite o nome do remédio`),
+        nomeRemedio: String(prompt(`Digite o nome do remédio`)),
         qtdRemedio: parseInt(prompt(`Digite a quantidade do remédio`)),
         precoRemedio: parseFloat(prompt(`Digite o valor do remédio`))
     }
