@@ -1,4 +1,4 @@
-// fazendo o menu aparecer e desaparecer
+// fazendo o menu do celular aparecer e desaparecer
 const menu = document.querySelector('.mobile-menu-icon-button');
 const menuItens = document.querySelector('.mobile-menu');
 
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// utilizando a biblioteca ScrollReveal para animar os elementos da página
 window.sr = ScrollReveal({ reset: true });
 sr.reveal('.banner-message', { duration: 2500 });
 sr.reveal('.banner-image', { 
