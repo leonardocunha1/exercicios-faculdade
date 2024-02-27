@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Itera sobre os itens do menu para verificar se a página corresponde ao link e adiciona a classe "active"
     menuItems.forEach(function(item) {
         if (item.getAttribute('href') === currentPage) {
-            item.style.color = '#ffa500';
+            item.style.color = '#f26820';
             item.style.transition = 'none'
             item.classList.add('active');
         }
@@ -29,5 +29,4 @@ window.sr = ScrollReveal({ reset: true });
 sr.reveal('.banner-message', { duration: 2500 });
 sr.reveal('.banner-image', { 
     rotate: { x: 0, y: 80, z: 0 }, duration: 2500});
-
-// banner-message, .banner-image
+sr.reveal('.info-burger-text', { duration: 2500 });
