@@ -328,6 +328,57 @@
 } */
 
 
+/*  Área de feedbacks de clientes */
+
+.burger-favorite {
+    background-color: #1b1b1b;
+    margin-top: -40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.burger-favorite .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger-favorite .container h1 {
+    color: white;
+    font-family: 'Calistoga';
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.burger-container-area {
+    display: flex;
+    gap: 40px;
+}
+
+.burger-favorite-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+    background-image: linear-gradient(to bottom, #424242, #1b1b1b);
+    border-radius: 8px;
+}
+
+.burger-favorite-content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.burger-favorite-content p {
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Poppins';
+}
 
 /* Responsividade */
 
