@@ -11,7 +11,8 @@ menu.addEventListener('click', function() {
 document.addEventListener("DOMContentLoaded", function() {
     var currentPage = window.location.pathname.split("/").pop(); // Obtém o nome do arquivo atual da URL
 
-    var menuItems = document.querySelectorAll('.menu .menu-item'); // Seleciona todos os itens do menu
+    var menuItems = document.querySelectorAll('.menu nav .menu-info .menu-item'); // Seleciona todos os itens do menu
+    // console.log(menuItems);
 
     // Itera sobre os itens do menu para verificar se a página corresponde ao link e adiciona a classe "active"
     menuItems.forEach(function(item) {
