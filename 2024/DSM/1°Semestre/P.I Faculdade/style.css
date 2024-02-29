@@ -210,7 +210,7 @@ body {
 
 .banner {
     background-color: #1b1b1b;
-    width: 100vw;
+    /* width: 100vw; */
     position: relative;
     display: flex;
 }
@@ -218,6 +218,7 @@ body {
 .banner .container {
     display: flex;
     justify-content: space-between;
+    padding: 0;
 }
 
 .banner-message,
@@ -424,7 +425,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: white; */
     background-image: linear-gradient(to bottom, #424242, #1b1b1b);
     border-radius: 8px;
 }
@@ -599,5 +599,4 @@ body {
     .burger-container-area {
         grid-template-columns: 1fr;
     }
-
 }

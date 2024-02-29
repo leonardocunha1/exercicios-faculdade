@@ -4,10 +4,10 @@ const btnOpenModal = document.querySelector(".mobile-menu");
 const btnCloseModal = document.querySelector(".mobile-menu-close-btn");
 const overlay = document.querySelector(".overlay");
 
-const openMenu = function() {
-    btnOpenModal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-}
+const openMenu = function () {
+  btnOpenModal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
 
 const closeMenu = function () {
   btnOpenModal.classList.add("hidden");
@@ -18,20 +18,28 @@ menu.addEventListener("click", openMenu);
 btnCloseModal.addEventListener("click", closeMenu);
 overlay.addEventListener("click", closeMenu);
 
-
-
 // fazendo o aba selecionada no menu ficar laranja e com a classe "active"
 document.addEventListener("DOMContentLoaded", function () {
   var currentPage = window.location.pathname.split("/").pop(); // Obtém o nome do arquivo atual da URL
   var menuItems = document.querySelectorAll(".menu nav .menu-info .menu-item"); // Seleciona todos os itens do menu
+  let menuMobile = document.querySelectorAll(".mobile-menu .menu-item");
   // console.log(menuItems);
 
-  // Itera sobre os itens do menu para verificar se a página corresponde ao link e adiciona a classe "active"
+  // Itera sobre os itens do menu deskot para verificar se a página corresponde ao link e adiciona a classe "active"
   menuItems.forEach(function (item) {
     if (item.getAttribute("href") === currentPage) {
       item.style.color = "#f26820";
       item.style.transition = "none";
       item.classList.add("active");
+    }
+  });
+
+  // Itera sobre os itens do menu mobile para verificar se a página corresponde ao link e adiciona a classe "active"
+  menuMobile.forEach(function (item) {
+    if (item.getAttribute("href") === currentPage) {
+      item.style.color = "black";
+      item.style.fontWeight = "bold";
+      item.style.borderBottom = "3px solid black";
     }
   });
 });
