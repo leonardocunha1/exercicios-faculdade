@@ -1,3 +1,4 @@
+const nav = document.querySelector(".menu-principal");
 const menu = document.querySelector(".mobile-menu-icon-button");
 const btnOpenModal = document.querySelector(".mobile-menu");
 const btnCloseModal = document.querySelector(".mobile-menu-close-btn");
@@ -64,6 +65,32 @@ sr.reveal(".banner-image", {
   duration: 2500,
 });
 sr.reveal(".info-burger-text", { duration: 2500 });
+
+// Sticky navigation: Intersection Observer API
+
+const header = document.querySelector('.banner'); // Seleciona o banner porque é o elemento que queremos observar.
+const navHeight = nav.getBoundingClientRect().height; // Pega a altura do menu para usar como margem no IntersectionObserver.
+
+const stickyNav = function (entries) {
+  // Função que será executada quando o elemento observado sofrer alguma mudança.
+  const [entry] = entries; // Pega o primeiro elemento do array de entries.
+  //   console.log(entry);
+
+  if (!entry.isIntersecting)
+    nav.classList.add( 
+      'sticky'
+    ); // Adiciona a classe sticky ao menu se o header não estiver mais visível na tela. O isItntersecting do !entry.isIntersecting é false quando o header não está mais visível na tela pois o header não está mais intersectando a viewport.	
+  else nav.classList.remove('sticky'); // Remove a classe sticky do menu se o header estiver visível na tela.
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  // Cria um novo IntersectionObserver que executa a função stickyNav quando o elemento observado sofre alguma mudança.
+  root: null, // Null porque queremos que o elemento observado seja a viewport.
+  threshold: 0, // Chama o callback assim que o header sair completamente da visualização. Se o valor fosse 0.1, por exemplo, o callback seria chamado assim que apenas 10% do header estivesse visível na tela.
+  rootMargin: `-${navHeight}px`, // Margem para o elemento observado, garantindo que o sticky navigation seja ativado antes que o header saia completamente da visualização.
+});
+
+headerObserver.observe(header); // Observa o header.
 
 // Tabbed component (componente de abas que mostra um conteúdo diferente para cada aba)
 
