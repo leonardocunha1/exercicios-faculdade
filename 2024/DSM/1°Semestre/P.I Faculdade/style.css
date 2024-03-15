@@ -26,11 +26,7 @@ body {
     padding: 20px 50px;
     width: 100%;
     z-index: 10;
-}
-
-.sticky {
-    position: fixed;
-    background-color: #1b1b1bd2;
+    position: static;
 }
 
 .menu {
@@ -97,6 +93,11 @@ body {
     background-color: #b14545;
     color: #faebd7;
     transform: scale(1.1);
+}
+
+.sticky {
+    position: fixed;
+    background-color: #1b1b1bd2;
 }
 
 /* Parte menu mobile */
