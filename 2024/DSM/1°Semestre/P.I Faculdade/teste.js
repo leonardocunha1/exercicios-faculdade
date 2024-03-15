@@ -5,13 +5,13 @@ const btnCloseModal = document.querySelector(".mobile-menu-close-btn");
 const overlay = document.querySelector(".overlay");
 
 const openMenu = function () {
-  btnOpenModal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  btnOpenModal.style.right = "0";
 };
 
 const closeMenu = function () {
-  btnOpenModal.classList.add("hidden");
   overlay.classList.add("hidden");
+  btnOpenModal.style.right = "-300px";
 };
 
 menu.addEventListener("click", openMenu);
