@@ -66,6 +66,27 @@ sr.reveal(".banner-image", {
 });
 sr.reveal(".info-burger-text", { duration: 2500 });
 
+
+// Menu fade animation (efeito de opacidade no menu quando o mouse passa por cima de um link)
+const handleHover = function (e) {
+    // função que define o comportamento do menu quando o mouse passa por cima ou sai de cima de um link
+    if (e.target.classList.contains('menu-item')) {
+      // verifica se o elemento que disparou o evento tem a classe nav__link
+      const link = e.target; // pega o elemento que disparou o evento. por exemplo o link do menu que o mouse passou por cima
+      const siblings = link.closest('.menu').querySelectorAll('.menu-item'); // pega todos os links do menu. Para isso, ele procura pelo elemento pai do link que disparou o evento que tenha a classe nav e depois pega todos os elementos com a classe nav__link que estão dentro desse elemento pai através do querySelectorAll
+  
+      siblings.forEach(el => {
+        // para cada link do menu, ele verifica se é o link que disparou o evento. Se for, ele deixa a opacidade do link que disparou o evento em 1, ou seja, 100%. Se não for, ele deixa a opacidade do link que não disparou o evento em 0.5, ou seja, 50%
+        if (el !== link) el.style.opacity = this; // this é o valor que foi passado para a função handleHover através do bind. Nesse caso, o valor é 0.5 quando o mouse passa por cima de um link e 1 quando o mouse sai de cima de um link
+      });
+      logo.style.opacity = this; // this é o valor que foi passado para a função handleHover através do bind. Nesse caso, o valor é 0.5 quando o mouse passa por cima de um link e 1 quando o mouse sai de cima de um link
+    }
+  };
+
+// Passing "argument" into handler
+nav.addEventListener('mouseover', handleHover.bind(0.5)); // quando o mouse passa por cima do nav, ele executa a função handleHover com o valor 0.5
+nav.addEventListener('mouseout', handleHover.bind(1)); // quando o mouse sai de cima do nav, ele executa a função handleHover com o valor 1
+
 // Sticky navigation: Intersection Observer API
 
 // const header = document.querySelector(".banner"); // Seleciona o banner porque é o elemento que queremos observar.
