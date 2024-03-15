@@ -23,6 +23,7 @@ body {
 .menu-principal {
     background-color: #1b1b1b;
     padding: 20px 50px;
+    
 }
 
 .menu {
@@ -108,10 +109,11 @@ body {
 }
 
 .mobile-menu {
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -300px;
     width: 300px;
@@ -121,6 +123,7 @@ body {
     border-radius: 0 0 0 30px;
     z-index: 3;
     transition: right 0.4s ease;
+    /* overflow: hidden; */
 }
 
 .mobile-menu-close-btn {
@@ -334,39 +337,7 @@ body {
     color: #F26820;
 }
 
-/* Mexi com o grid, mas vou deixar para outra hora */
-
-/* .info-burger-area {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.info-burger-img-burger {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    margin: auto;
-} */
-
-/* .info-burger-img-potato {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-} */
-
-/* .info-burger-text {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-} */
-
-/* .info-burger-img-potato {
-    margin: auto;
-} */
-
-/* .info-burger-img-potato img {
-    width: 350px;
-} */
-
-
-/*  Área de feedbacks de clientes */
+/* Burgers favoritos */
 
 .burger-favorite {
     background-color: #1b1b1b;
@@ -375,47 +346,262 @@ body {
     padding-bottom: 60px;
 }
 
-.burger-favorite .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.burger-favorite .container h1 {
-    color: white;
+.burger-favorite-h1 {
+    color: #faebd7;
     font-family: 'Calistoga';
-    font-size: 35px;
-    font-weight: 700;
-    margin-bottom: 30px;
+    font-size: 50px;
     text-align: center;
 }
 
-.burger-container-area {
-    display: flex;
-    gap: 40px;
+.btn {
+    display: inline-block;
+    font-size: 18px;
+    background-color: #5ec576;
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.burger-favorite-content {
+.btn:hover {
+    background-color: #4bbb7d;
+}
+
+/* OPERATIONS */
+.operations {
+    max-width: 100%;
+    margin: 70px auto 0 auto;
+    /* background-color: #272727; */
+}
+
+.operations__tab-container {
+    display: flex;
+    justify-content: center;
+}
+
+.operations__tab {
+    margin-right: 2.5rem;
+    transform: translateY(-50%);
+}
+
+.operations__tab span {
+    margin-right: 1rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.operations__tab--1 {
+    background-color: #ffcb03;
+}
+
+.operations__tab--1:hover {
+    background-color: #ffbb00;
+}
+
+.operations__tab--3 {
+    background-color: #ff585f;
+    margin: 0;
+}
+
+.operations__tab--3:hover {
+    background-color: #fd424b;
+}
+
+.operations__tab--active {
+    transform: translateY(-66%);
+}
+
+.operations__content {
+    display: none;
+    padding: 30px 40px;
+    color: #faebd7;
+}
+
+.operations__content--active {
+    display: flex;
+}
+
+.operations__content img {
+    width: 300px;
+    height: 400px;
+}
+
+.burger-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.name-burger {
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.burger-content {
+    font-size: 16px;
+}
+
+/* Área feedback clientes */
+
+.feedback-clients {
+    margin-top: 30px;
+}
+
+.feedback-h1 {
+    font-size: 50px;
+    font-family: 'Calistoga';
+    text-align: center;
+}
+
+.slider {
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+
+    /* IN THE END */
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    display: flex;
     align-items: center;
-    background-image: linear-gradient(to bottom, #424242, #1b1b1b);
-    border-radius: 8px;
+    justify-content: center;
+
+    /* THIS creates the animation! */
+    transition: transform 1s;
 }
 
-.burger-favorite-content img {
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    border-radius: 50%;
+    height: 88px;
+    width: 88px;
+    font-size: 50px;
+    cursor: pointer;
 }
 
-.burger-favorite-content p {
-    color: white;
+.slider__btn--left {
+    left: 6%;
+    transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+    right: 6%;
+    transform: translate(50%, -50%);
+}
+
+.dots {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dots__dot {
+    border: none;
+    background-color: #b9b9b9;
+    opacity: 0.7;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-right: 28px;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    /* Only necessary when overlying images */
+    /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
+}
+
+.dots__dot:last-child {
+    margin: 0;
+}
+
+.dots__dot--active {
+    background-color: #888;
+    opacity: 1;
+}
+
+/* Depoimento dos clientes */
+.testimonial {
+    width: 65%;
+    position: relative;
+}
+
+.testimonial::before {
+    content: '\201C';
+    position: absolute;
+    top: -60px;
+    left: -108px;
+    line-height: 1;
+    font-size: 240px;
+    color: #F26820;
+}
+
+.testimonial__header {
+    font-size: 20px;
+    color: #F26820;
     font-weight: 700;
-    font-size: 18px;
-    font-family: 'Poppins';
+    margin-bottom: 20px;
+}
+
+.testimonial__text {
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.testimonial__author {
+    font-style: normal;
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+}
+
+.testimonial__photo {
+    grid-row: 1 / span 2;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.testimonial__name {
+    font-size: 20px;
+    font-weight: 500;
+    align-self: end;
+    margin: 0;
+}
+
+.testimonial__info {
+    color: #1b1b1b;
+}
+
+.section__title--testimonials {
+    margin-bottom: 4rem;
+}
+
+footer {
+    height: 150px;
+    background-color: #1b1b1b;
+    color: #faebd7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #F26820;
 }
 
 /* Responsividade */
@@ -436,12 +622,6 @@ body {
     .info-burger-img-burger img {
         width: 450px;
     }
-
-    .burger-favorite {
-        margin-top: 0;
-    }
-
-
 }
 
 @media screen and (max-width: 1000px) {
@@ -489,6 +669,10 @@ body {
     .menu .menu-info,
     .menu .button {
         display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
     }
 
     .mobile-menu-icon {
@@ -542,10 +726,66 @@ body {
         padding: 0 50px;
     }
 
-    .burger-favorite-content img {
-        width: 150px;
-        height: 150px;
-        border-radius: 8px;
+    .burger-favorite-h1,
+    .feedback-h1 {
+        font-size: 40px;
+    }
+
+    .burger-favorite {
+        margin: 0;
+    }
+
+    .operations__content img {
+        width: 250px;
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .operations__tab-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .operations__tab {
+        margin: 0;
+    }
+    
+    .btn {
+        margin-bottom: 25px;
+        width: 300px;
+    }
+
+    .btn:last-child {
+        margin-bottom: 0;
+    }
+
+    .name-burger h1 {
+        text-align: center;
+    }
+
+    .operations__content {
+        padding: 0px 40px;
+    }
+
+    .operations__content--active {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial::before {
+        font-size: 170px;
+        top: -40px;
+        left: -70px;
+    }
+
+    .slider {
+        height: 550px;
+    }
+
+    .slide {
+        height: auto;
+        margin-top: 40px;
     }
 }
 
@@ -569,10 +809,24 @@ body {
     .info-burger-text {
         padding: 0 20px;
     }
+
+    .slider {
+        height: 650px;
+    }
+
+    .slider__btn {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .testimonial::before {
+        content: "";
+    }
 }
 
-@media screen and (max-width: 375px) {
-    .burger-container-area {
-        grid-template-columns: 1fr;
+@media screen and (max-width: 430px) {
+    .slider {
+        height: 700px;
     }
 }

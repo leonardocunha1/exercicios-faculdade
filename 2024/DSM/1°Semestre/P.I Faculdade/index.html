@@ -17,7 +17,9 @@
             <li><a href="index.html" class="menu-item">Início</a></li>
             <li><a href="sobre.html" class="menu-item">Sobre nós</a></li>
             <li><a href="cardapio.html" class="menu-item">Cardápio</a></li>
-            <li><a href="localizacao.html" class="menu-item">Localização</a></li>
+            <li>
+              <a href="localizacao.html" class="menu-item">Localização</a>
+            </li>
             <li><a href="contato.html" class="menu-item">Contato</a></li>
           </ul>
         </nav>
@@ -48,7 +50,6 @@
     </section>
 
     <div class="overlay hidden"></div>
-
 
     <section class="banner">
       <div class="container">
@@ -153,44 +154,174 @@
 
     <section class="burger-favorite">
       <div class="container">
-        <h1>Os Burgers favoritos da galera</h1>
-        <div class="burger-container-area">
-          <div class="burger-favorite-content">
-            <img
-              src="./images/burgers/Burger1.png"
-              alt="Um delicioso hambúrguer"
-              srcset=""
-            />
-            <p>Diiner tudo</p>
+        <h1 class="burger-favorite-h1">Os Burgers favoritos da galera</h1>
+
+        <div class="operations">
+          <div class="operations__tab-container">
+            <button
+              class="btn operations__tab operations__tab--1 operations__tab--active"
+              data-tab="1"
+            >
+              <span>01</span>Diiner tudo
+            </button>
+            <button class="btn operations__tab operations__tab--2" data-tab="2">
+              <span>02</span>Diinerníficon
+            </button>
+            <button class="btn operations__tab operations__tab--3" data-tab="3">
+              <span>03</span>X-Bacon
+            </button>
           </div>
-          <div class="burger-favorite-content">
-            <img
-              src="./images/burgers/Burger2.png"
-              alt="Um delicioso hambúrguer"
-              srcset=""
-            />
-            <p>Diinerníficon</p>
+          <div
+            class="operations__content operations__content--1 operations__content--active"
+          >
+            <img src="./images/burgers/Burger1.png" alt="" srcset="" />
+
+            <div class="burger-info">
+              <div class="name-burger">
+                <h1>Diiner Tudo</h1>
+              </div>
+              <div class="burger-content">
+                <p>
+                  Uma camada generosa de queijo cheddar derretido com um molho
+                  especial sobre o hambúrguer suculento, trazendo um sabor
+                  intenso e cremoso que combina perfeitamente com a carne. Isso
+                  adiciona uma dimensão extra de sabor e sofisticação ao seu
+                  hambúrguer, elevando-o a um nível gourmet irresistível.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="burger-favorite-content">
-            <img
-              src="./images/burgers/Burger3.png"
-              alt="Um delicioso hambúrguer"
-              srcset=""
-            />
-            <p>Carne e queijo</p>
+
+          <div class="operations__content operations__content--2">
+            <img src="./images/burgers/Burger2.png" alt="" srcset="" />
+
+            <div class="burger-info">
+              <div class="name-burger">
+                <h1>Diinerníficon</h1>
+              </div>
+              <div class="burger-content">
+                <p>
+                  Uma combinação de sabores que mistura tradição e inovação. Um
+                  molho especial de cogumelos selvagens, preparado com uma
+                  variedade de cogumelos frescos, creme de leite e ervas finas.
+                  Uma fatia de queijo brie derretido sobre o hambúrguer,
+                  proporcionando uma textura cremosa e um sabor delicado. Para
+                  deliciiaaar, presente folhas frescas de rúcula.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="burger-favorite-content">
-            <img
-              src="./images/burgers/Burger4.png"
-              alt="Um delicioso hambúrguer"
-              srcset=""
-            />
-            <p>X-Bacon</p>
+          <div class="operations__content operations__content--3">
+            <img src="./images/burgers/Burger3.png" alt="" srcset="" />
+
+            <div class="burger-info">
+              <div class="name-burger">
+                <h1>Diiner Tudo</h1>
+              </div>
+              <div class="burger-content">
+                <p>
+                  Este burger é uma homenagem ao hambúrguer clássico americano
+                  com um toque de bacon extra crocante. Uma carne grelhada no
+                  ponto desejado e adicione fatias generosas de bacon
+                  caramelizado. Para uma combinação de sabores, há uma camada de
+                  abacate cremoso e maduro, proporcionando uma textura suave e
+                  um sabor fresco com um toque de molho barbecue defumado.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="feedback-clients">
+      <div class="container">
+        <h1 class="feedback-h1">Feedback dos nossos clientes</h1>
+
+        <div class="slider">
+          <div class="slide">
+            <div class="testimonial">
+              <h5 class="testimonial__header">
+                Ambiente Acolhedor, Sabores Divinos!
+              </h5>
+              <p class="testimonial__text">
+                Adoro vir a esta hamburgueria sempre que estou na área. O
+                ambiente é descontraído e acolhedor, perfeito para relaxar com
+                amigos. Os hambúrgueres são simplesmente divinos, suculentos e
+                cheios de sabor. Além disso, o atendimento é impecável, sempre
+                com um sorriso no rosto e prontos para ajudar. Definitivamente
+                recomendo!
+              </p>
+              <address class="testimonial__author">
+                <img
+                  src="images/user-1.jpg"
+                  alt=""
+                  class="testimonial__photo"
+                />
+                <h6 class="testimonial__name">João Pintassilgo</h6>
+                <p class="testimonial__info">Cliente Frequente</p>
+              </address>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="testimonial">
+              <h5 class="testimonial__header">
+                Recomendo fortemente a Diiner Burger
+              </h5>
+              <p class="testimonial__text">
+                Fiquei impressionado com a experiência que tive nesta
+                hamburgueria. O ambiente é moderno e convidativo, ideal para uma
+                refeição descontraída. Os hambúrgueres são de alta qualidade,
+                com ingredientes frescos e combinações deliciosas. O atendimento
+                foi rápido e amigável, tornando minha primeira visita memorável.
+                Com certeza voltarei em breve!
+              </p>
+              <address class="testimonial__author">
+                <img
+                  src="images/user-2.jpg"
+                  alt=""
+                  class="testimonial__photo"
+                />
+                <h6 class="testimonial__name">Ana Carolina</h6>
+                <p class="testimonial__info">Primeira Visita</p>
+              </address>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="testimonial">
+              <h5 class="testimonial__header">Negócio é brabo memo!</h5>
+              <p class="testimonial__text">
+                Este lugar é um paraíso para os amantes de hambúrgueres! O
+                ambiente é animado e acolhedor, perfeito para uma noite com
+                amigos ou família. Os hambúrgueres são simplesmente incríveis,
+                suculentos e cheios de sabor. O atendimento é sempre atencioso e
+                rápido, garantindo uma experiência agradável a cada visita.
+                Recomendo a todos os fãs de comida boa e ambiente descontraído!
+              </p>
+              <address class="testimonial__author">
+                <img
+                  src="images/user-3.jpg"
+                  alt=""
+                  class="testimonial__photo"
+                />
+                <h6 class="testimonial__name">Marcos Oliveira</h6>
+                <p class="testimonial__info">Amante de Hambúrgueres</p>
+              </address>
+            </div>
+          </div>
+
+          <button class="slider__btn slider__btn--left">&larr;</button>
+          <button class="slider__btn slider__btn--right">&rarr;</button>
+          <div class="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        <p>© Copyright by <a href="https://www.linkedin.com/in/leonardo-cunha-8a6170263/" target="_blank">Leonardo Cunha</a></p>
+    </footer>
     <script src="teste.js"></script>
   </body>
 </html>
