@@ -24,7 +24,7 @@ body {
 .menu-principal {
     background-color: #1b1b1b;
     padding: 20px 50px;
-    width: 100vw;
+    width: 100%;
     z-index: 10;
 }
 
