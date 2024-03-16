@@ -246,7 +246,9 @@ De que coisas você precisa para instalar o software e como instalá-lo?
 1. Minha foto
 <img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Curriculo-html-nao-respnsivo/images/minha%20foto.png" width="250px" />
 2. Foto das microcertificações do curso de DSM
-<img src="https://github.com/leonardocunha1/exercicios-faculdade/blob/main/2024/DSM/1%C2%B0Semestre/Web%20I/Curriculo-html-nao-respnsivo/images/dsm-certificacoes.png?raw=true" width="500px" />
+<img src="https://github.com/leonardocunha1/exercicios-faculdade/blob/main/2024/DSM/1%C2%B0Semestre/Web%20I/Curriculo-html-nao-respnsivo/images/dsm-certificacoes.png?raw=true" width="400px" />
 
 ## 🖼 Prints do site
-
+<img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Curriculo-html-nao-respnsivo/images/pagina1.png" width="500px"/>
+<img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Curriculo-html-nao-respnsivo/images/pagina2.png" width="500px"/>
+<img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Curriculo-html-nao-respnsivo/images/pagina3.png" width="500px"/>
