@@ -208,6 +208,7 @@ body {
     padding: 0;
 }
 
+/* TEM QUE COLOCAR VISIBILITY: HIDDEN POR CONTA DO SCROLL REAVEAL */
 .banner-message,
 .banner-image {
     visibility: hidden;
