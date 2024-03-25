@@ -436,6 +436,7 @@ body {
 .operations__content img {
     width: 300px;
     height: 400px;
+    object-fit: contain;
 }
 
 .burger-info {
@@ -634,9 +635,8 @@ footer a {
 }
 
 @media screen and (max-width: 1000px) {
-    .burger-container-area {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr)
+    .burger-favorite {
+        margin-top: 0;
     }
 }
 
@@ -656,9 +656,7 @@ footer a {
     .banner p {
         font-size: 25px;
         color: #ffa500;
-        font-weight: 700;
         margin-top: 20px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
 
     .contact-area {
@@ -790,7 +788,7 @@ footer a {
     }
 
     .slider {
-        height: 550px;
+        height: 520px;
     }
 
     .slide {
@@ -821,7 +819,7 @@ footer a {
     }
 
     .slider {
-        height: 650px;
+        height: 600px;
     }
 
     .slider__btn {
@@ -835,7 +833,7 @@ footer a {
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 370px) {
     .slider {
         height: 700px;
     }
