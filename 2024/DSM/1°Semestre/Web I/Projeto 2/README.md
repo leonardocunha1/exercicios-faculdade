@@ -1,6 +1,6 @@
 # 🐙 Descrição do Projeto
 
-Este projeto trata-se do Trabalho 3: Mini-Pi - Criando um site HTML5 e CSS3 da matéria Desenvolvimento Web I.
+Este projeto trata-se do Trabalho 3: Mini-Pi - Criando um site HTML5 e CSS3 da matéria Desenvolvimento Web I. O intuito deste trabalho é colocar em prática os assuntos aprendidos em sala de aula.
 
 > [!NOTE]
 > [Link do site online e funcionando](https://leonardocunha1.github.io/exercicios-faculdade/2024/DSM/1%C2%B0Semestre/Web%20I/Projeto%202/)
@@ -176,9 +176,7 @@ Este projeto trata-se do Trabalho 3: Mini-Pi - Criando um site HTML5 e CSS3 da m
 
 <details>
 
-<summary>Imagens Utilizadas 📷</summary>
-
-### You can add a header
+<summary>📷 Imagens Utilizadas</summary>
 
 1. Primeira versão bizarra do mascote do Android
 <img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Projeto%202/Screenshot_1.png" width="350px" />
@@ -191,7 +189,18 @@ Este projeto trata-se do Trabalho 3: Mini-Pi - Criando um site HTML5 e CSS3 da m
 <br>
 <img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Projeto%202/Screenshot_3.png" width="100px" />
 
-
 </details>
 
+<details>
 
+<summary>📷 Prints do site</summary>
+
+<img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Projeto%202/prints/print1.png" width="350px" />
+<br>
+<img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Projeto%202/prints/print2.png" width="350px" />
+<br>
+<img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Projeto%202/prints/print3.png" width="350px" />
+<br>
+<img src="https://raw.githubusercontent.com/leonardocunha1/exercicios-faculdade/main/2024/DSM/1%C2%B0Semestre/Web%20I/Projeto%202/prints/print4.png" width="350px" />
+
+</details>
