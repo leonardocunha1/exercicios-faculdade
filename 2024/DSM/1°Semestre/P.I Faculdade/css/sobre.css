@@ -112,3 +112,15 @@
 #map {
     height: 300px;
 }
+
+@media (width < 830px) {
+    .sobre-nos {
+        height: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+    }
+    .sobre-nos .sobre-message h1 {
+        letter-spacing: normal;
+    }
+}
