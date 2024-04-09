@@ -6,6 +6,8 @@ sr.reveal(".banner-image", {
   duration: 2500,
 });
 sr.reveal(".info-burger-text", { duration: 2500 });
+sr.reveal(".info-burger-img-burger img", { duration: 2500 });
+
 
 // Tabbed component (componente de abas que mostra um conteúdo diferente para cada aba)
 
