@@ -120,7 +120,30 @@
         padding-right: 40px;
         padding-bottom: 40px;
     }
-    .sobre-nos .sobre-message h1 {
+    .sobre-nos .sobre-message h1,
+    .sobre .sobre-message h1,
+    .localizacao h1 {
         letter-spacing: normal;
+        font-size: 50px;
+    }
+}
+
+@media (width < 630px) {
+    .sobre .sobre-img {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sobre-img-fachada {
+        height: 300px;
+    }
+}
+
+@media (width < 400px) {
+    .sobre-nos .sobre-message h1,
+    .sobre .sobre-message h1,
+    .localizacao h1 {
+        font-size: 40px;
     }
 }
