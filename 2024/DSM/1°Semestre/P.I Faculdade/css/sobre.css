@@ -31,7 +31,6 @@
 .sobre-nos .sobre-message h1 {
     font-size: 60px;
     font-family: 'Calistoga';
-    letter-spacing: 5px;
     text-align: center;
 }
 
@@ -85,33 +84,92 @@
 
 .sobre .sobre-message h1 {
     padding: 20px 0;
-    color: white;
+    color: #faebd7;
     font-size: 60px;
     font-family: 'Calistoga';
     text-align: center;
-    letter-spacing: 5px;
+    /* letter-spacing: 5px; */
 }
 
-.sobre .sobre-message h1 span {
+/* Desafios, etc */
+
+.desafios-h1 {
+    padding: 20px 0;
+    color: #1B1B1B;
+    font-size: 60px;
+    font-family: 'Calistoga';
+    text-align: center;
+}
+
+.desafios h1 span {
     color: #f26820;
     margin-left: 4px;
 }
 
-.localizacao {
-    padding: 40px 0;
-}
-
-.localizacao h1 {
-    font-size: 60px;
-    font-family: 'Calistoga';
-    letter-spacing: 5px;
+.desafios-p {
     text-align: center;
-    padding-bottom: 20px;
 }
 
-#map {
-    height: 300px;
+.desafios-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    gap: 20px;
+    margin: 40px 0;
+    padding: 0 20px;
 }
+
+.desafios-content {
+    width: 320px;
+    background-color: #202020;
+    padding: 30px;
+    border-radius: 9px;
+    box-shadow: 2px 2px 4px #f26820;
+    /* border: 2px solid #f26820; */
+}
+
+.desafios-content h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #faebd7;
+    margin-bottom: 20px;
+}
+
+.desafios-content .img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.desafios-content .img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f26820;
+}
+
+.desafios-content p {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #979696;
+    line-height: 1.4;
+}
+
+.desafios-content span {
+    color: #f26820;
+    font-weight: 700;
+
+}
+
+@media (width < 1080px) {
+    .desafios-content {
+        height: 570px;
+    }
+}
+
 
 @media (width < 830px) {
     .sobre-nos {
@@ -120,9 +178,9 @@
         padding-right: 40px;
         padding-bottom: 40px;
     }
+
     .sobre-nos .sobre-message h1,
-    .sobre .sobre-message h1,
-    .localizacao h1 {
+    .sobre .sobre-message h1 {
         letter-spacing: normal;
         font-size: 50px;
     }
@@ -141,9 +199,13 @@
 }
 
 @media (width < 400px) {
+
     .sobre-nos .sobre-message h1,
-    .sobre .sobre-message h1,
-    .localizacao h1 {
+    .sobre .sobre-message h1 {
         font-size: 40px;
+    }
+
+    .desafios-content {
+        height: auto;
     }
 }

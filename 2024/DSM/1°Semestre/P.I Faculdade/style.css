@@ -614,6 +614,28 @@ footer a {
     color: #F26820;
 }
 
+/* Parte do MAPA */
+
+#map {
+    height: 300px;
+    max-width: 700px;
+    display: block;
+    margin: auto;
+}
+
+.localizacao {
+    padding: 40px 0;
+    background-color: #1b1b1b;
+}
+
+.localizacao h1 {
+    font-size: 50px;
+    color: #faebd7;
+    font-family: 'Calistoga';
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 /* Responsividade */
 
 @media screen and (max-width: 1100px) {
