@@ -127,6 +127,14 @@ const slider = function () {
       activateDot(slide); // chama a função activateDot para ativar o ponto correspondente ao slide atual
     }
   });
+
+    // Função para avançar automaticamente o slide
+    const startSlider = function () {
+      setInterval(nextSlide, 4000); // Chama nextSlide a cada 4 segundos (4000 milissegundos)
+    };
+  
+    // Iniciar o slider automaticamente
+    startSlider(); // chama a função startSlider para iniciar o slider automaticamente
 };
 slider(); // chama a função slider para inicializar o slider
 
