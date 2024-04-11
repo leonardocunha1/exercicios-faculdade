@@ -161,15 +161,79 @@
 .desafios-content span {
     color: #f26820;
     font-weight: 700;
-
 }
+
+/* Premiações */
+
+.premiacoes {
+    background-color: #1b1b1b;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.premiacoes-h1 {
+    color:#faebd7;
+    font-family: 'Calistoga';
+    text-align: center;
+    font-size: 60px;
+}
+
+.premiacoes-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.premiacoes-content {
+    display: flex;
+    width: 700px;
+    max-width: 90%;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 6px;
+    /* box-shadow: 2px 2px 4px #fafafa; */
+}
+
+.premiacoes-content img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.premiacoes-content-left {
+    position: relative;
+}
+
+.premiacoes-content-left h1 {
+    margin-top: 40px;
+    margin-left: 100px;
+    font-size: 30px;
+    color: #faebd7;
+}
+
+.premiacoes-content-left .premiacoes-p {
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #979696;
+}
+
+.premiacoes-number {
+    position: absolute;
+    font-family: 'calistoga';
+    font-size: 70px;
+    color: #b94608;
+}
+
 
 @media (width < 1080px) {
     .desafios-content {
         height: 570px;
     }
 }
-
 
 @media (width < 830px) {
     .sobre-nos {
@@ -184,6 +248,11 @@
         letter-spacing: normal;
         font-size: 50px;
     }
+
+    .premiacoes-content {
+        width: auto;
+        max-width: none;
+    }
 }
 
 @media (width < 630px) {
@@ -196,16 +265,33 @@
     .sobre-img-fachada {
         height: 300px;
     }
+
+    .premiacoes-content-right {
+        display: none;
+    }
 }
 
-@media (width < 400px) {
+@media (width < 420px) {
 
     .sobre-nos .sobre-message h1,
-    .sobre .sobre-message h1 {
+    .sobre .sobre-message h1,
+    .desafios-h1,
+    .premiacoes-h1 {
         font-size: 40px;
     }
 
     .desafios-content {
         height: auto;
     }
+
+    .premiacoes-content-left h1 {
+        font-size: 25px;
+        margin-top: 20px;
+        margin-left: 70px;
+    }
+
+    .premiacoes-number {
+        font-size: 50px;
+    }
+ 
 }

@@ -63,7 +63,7 @@ const handleHover = function (e) {
     if (e.target.classList.contains('menu-item')) {
       // verifica se o elemento que disparou o evento tem a classe nav__link
       const link = e.target; // pega o elemento que disparou o evento. por exemplo o link do menu que o mouse passou por cima
-      const siblings = link.closest('.menu').querySelectorAll('.menu-item'); // pega todos os links do menu. Para isso, ele procura pelo elemento pai do link que disparou o evento que tenha a classe nav e depois pega todos os elementos com a classe nav__link que estão dentro desse elemento pai através do querySelectorAll
+      const siblings = link.closest('.menu').querySelectorAll('.menu-item'); // pega todos os links do menu. Para isso, ele procura pelo elemento pai do link que disparou o evento que tenha a classe menu e depois pega todos os elementos com a classe menu-item que estão dentro desse elemento pai através do querySelectorAll
   
       siblings.forEach(el => {
         // para cada link do menu, ele verifica se é o link que disparou o evento. Se for, ele deixa a opacidade do link que disparou o evento em 1, ou seja, 100%. Se não for, ele deixa a opacidade do link que não disparou o evento em 0.5, ou seja, 50%
@@ -73,7 +73,7 @@ const handleHover = function (e) {
   };
 
 // Passing "argument" into handler
-nav.addEventListener('mouseover', handleHover.bind(0.5)); // quando o mouse passa por cima do nav, ele executa a função handleHover com o valor 0.5
-nav.addEventListener('mouseout', handleHover.bind(1)); // quando o mouse sai de cima do nav, ele executa a função handleHover com o valor 1
+nav.addEventListener('mouseover', handleHover.bind(0.5)); // quando o mouse passa por cima do menu, ele executa a função handleHover com o valor 0.5
+nav.addEventListener('mouseout', handleHover.bind(1)); // quando o mouse sai de cima do menu, ele executa a função handleHover com o valor 1
 
 
