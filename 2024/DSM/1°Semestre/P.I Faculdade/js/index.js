@@ -35,6 +35,7 @@ const slider = function () {
   const btnLeft = document.querySelector(".slider__btn--left"); // seleciona o botão da seta para a esquerda
   const btnRight = document.querySelector(".slider__btn--right"); // seleciona o botão da seta para a direita
   const dotContainer = document.querySelector(".dots"); // seleciona o container dos pontos
+  let trocarSlide
 
   let curSlide = 0; // variável que armazena o slide atual
   const maxSlide = slides.length; // variável que armazena o número total de slides
@@ -109,8 +110,21 @@ const slider = function () {
   init(); // chama a função init para inicializar o slider
 
   // Event handlers
-  btnRight.addEventListener("click", nextSlide); // adiciona um event listener para o botão da seta para a direita que chama a função nextSlide quando o botão é clicado
-  btnLeft.addEventListener("click", prevSlide); // adiciona um event listener para o botão da seta para a esquerda que chama a função prevSlide quando o botão é clicado
+  btnRight.addEventListener("click", () => {
+    nextSlide();
+    if (trocarSlide) {
+      clearInterval(trocarSlide);
+      trocarSlide = false;
+    }
+    
+  }); // adiciona um event listener para o botão da seta para a direita que chama a função nextSlide quando o botão é clicado
+  btnLeft.addEventListener("click", () => {
+    prevSlide();
+    if (trocarSlide) {
+      clearInterval(trocarSlide);
+      trocarSlide = false;
+    }
+  }); // adiciona um event listener para o botão da seta para a esquerda que chama a função prevSlide quando o botão é clicado
 
   document.addEventListener("keydown", function (e) {
     // adiciona um event listener para o documento que chama a função nextSlide ou prevSlide quando o usuário aperta as setas (direita e esquerda) do teclado
@@ -130,7 +144,7 @@ const slider = function () {
 
     // Função para avançar automaticamente o slide
     const startSlider = function () {
-      setInterval(nextSlide, 4000); // Chama nextSlide a cada 4 segundos (4000 milissegundos)
+      trocarSlide = setInterval(nextSlide, 4000); // Chama nextSlide a cada 4 segundos (4000 milissegundos)
     };
   
     // Iniciar o slider automaticamente
