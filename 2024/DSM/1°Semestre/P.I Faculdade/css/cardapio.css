@@ -72,12 +72,14 @@
 @media (width < 500px) {
 
     .burgers-area,
-    .bebidas-area {
+    .bebidas-area,
+    .sobremesas-area {
         grid-template-columns: repeat(auto-fill, 100%);
     }
 
     .burger,
-    .drinks {
+    .drinks,
+    .sobremesas {
         flex-direction: column;
     }
 
