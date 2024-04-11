@@ -1,5 +1,6 @@
 let burgerArea = document.querySelector(".burgers-area");
 let bebidasArea = document.querySelector(".bebidas-area");
+let sobremesasArea = document.querySelector(".sobremesas-area");
 
 burgerJson.forEach((item, index) => {
   let insereBurger = `
@@ -33,3 +34,27 @@ bebidasJson.forEach((item, index) => {
     bebidasArea.insertAdjacentHTML("beforeend", insereBebida);
 });
 
+sobremesasJson.forEach((item, index) => {
+    let insereSobremesa = `
+    <div class="sobremesas">
+        <div class="sobremesa-img-area content-area">
+            <img class="sobremesa-img content-img" src="${item.img}" alt="${item.name}" srcset="" />
+        </div>
+        <div class="sobremesa-infos content-infos">
+            <p class="sobremesa-nome content-nome">${index+1} - ${item.name}</p>
+            <p class="sobremesa-descricao content-descricao">${item.tipo}</p>
+            <p class="sobremesa-ingredientes content-descricao">Descrição: ${item.description}</p>
+        </div>`
+    sobremesasArea.insertAdjacentHTML("beforeend", insereSobremesa);
+});
+
+/* <div class="sobremesas">
+                    <div class="sobremesa-img-area content-area">
+                        <img class="sobremesa-img content-img" src="" alt="" srcset="" />
+                    </div>
+                    <div class="sobremesa-infos content-infos">
+                        <p class="sobremesa-nome content-name"></p>
+                        <p class="sobremesa-descricao content-descricao"></p>
+                        <p class="sobremesa-ingredientes content-ingredientes"></p>
+                    </div>
+                </div>  */
