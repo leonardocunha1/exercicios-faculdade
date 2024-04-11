@@ -768,6 +768,10 @@ footer a {
         width: 250px;
         height: 320px;
     }
+
+    .localizacao h1 {
+        font-size: 40px;
+    }
 }
 
 @media screen and (max-width: 650px) {
