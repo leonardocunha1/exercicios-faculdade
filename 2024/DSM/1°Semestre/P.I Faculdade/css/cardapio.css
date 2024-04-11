@@ -9,26 +9,27 @@
 
 }
 
-.burgers-h1 span,
-.bebidas-h1 span  {
+.exclamacao-decoration {
     color: #f26820;
 }
 
 .burgers-area,
 .bebidas-area {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    align-items: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 440px);
+    justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
 .burger,
 .drinks {
     display: flex;
-    width: 600px;
-    max-width: 100%;
+    /* width: 600px;
+    max-width: 100%; */
     gap: 20px;
     background-color: #202020;
     padding: 20px;
@@ -36,34 +37,50 @@
     box-shadow: 2px 2px 4px #f26820;
 }
 
-.burger-img,
-.drink-img {
+.content-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-img {
     width: 150px;
     height: 150px;
     object-fit: contain;
 }
 
-.burger-infos,
-.drink-infos {
+.content-infos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
 }
 
-.burger-nome,
-.drink-nome {
+.content-nome {
     font-size: 20px;
     font-weight: 700;
     font-family: 'poppins';
     color: #faebd7;
 }
 
-.burger-descricao,
-.burger-ingredientes,
-.drink-descricao,
-.drink-ingredientes {
+.content-descricao {
     font-size: 15px;
     color: #979696;
 }
 
+@media (width < 500px) {
+
+    .burgers-area,
+    .bebidas-area {
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+
+    .burger,
+    .drinks {
+        flex-direction: column;
+    }
+
+    .content-nome {
+        text-align: center;
+    }
+}

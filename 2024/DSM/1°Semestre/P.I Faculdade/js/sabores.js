@@ -65,7 +65,27 @@ let burgerJson = [
     tipo: "Uma opção deliciosa e sustentável para os vegetarianos.",
     sizes: ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
     price: [19.0, 23.0, 26.0, 29.0],
-  }
+  },
+  {
+    id: 8,
+    name: "Prime Burger",
+    img: "images/burgers/Burger8.png",
+    description:
+      "Pão, hambúrguer de picanha, queijo, bacon, alface, tomate, maionese",
+    tipo: "Para os amantes de carnes nobres, uma experiência única.",
+    sizes: ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    price: [22.5, 26.5, 29.5, 32.5]
+  },
+  {
+    id: 9,
+    name: "Burger Palace",
+    img: "images/burgers/Burger9.png",
+    description: "Pão, carne, queijo, alface, tomate, maionese",
+    tipo: "Um clássico irresistível para qualquer ocasião.",
+    sizes: ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    price: [15.9, 19.9, 22.9, 25.9]
+  },
+  
 ];
 
 let bebidasJson = [
