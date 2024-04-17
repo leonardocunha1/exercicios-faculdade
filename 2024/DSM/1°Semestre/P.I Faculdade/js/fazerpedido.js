@@ -28,7 +28,7 @@ burgerJson.map((item, index) => {
       burgerJson[key].description;
     document.querySelector(
       ".burgerInfo--actualPrice"
-    ).innerHTML = `R$ ${burgerJson[key].price[2].toFixed(2)}`;
+    ).innerHTML = `R$ ${burgerJson[key].price[3].toFixed(2)}`;
     document
       .querySelector(".burgerInfo--size.selected")
       .classList.remove("selected");

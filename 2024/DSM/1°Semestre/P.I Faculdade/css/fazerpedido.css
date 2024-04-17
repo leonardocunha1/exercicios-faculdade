@@ -475,6 +475,7 @@ main {
 
     .burgerWindowBody {
         width: 100vw;
+        /* height: 100vh; */
         display: block;
         padding: 20px;
         border-radius: 0;
@@ -513,5 +514,11 @@ main {
 
     .burgerInfo--cancelMobileButton {
         display: block;
+    }
+
+    .burgerBig img {
+        height: 200px;
+        width: 200px;
+        object-fit: contain;
     }
 }
