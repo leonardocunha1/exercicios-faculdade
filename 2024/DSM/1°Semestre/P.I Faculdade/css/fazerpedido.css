@@ -239,6 +239,7 @@ main {
 .burgerInfo--size.selected {
     background-color: #3b3b3b;
     color: #FFF;
+
 }
 
 .burgerInfo--size.selected span {
@@ -521,4 +522,4 @@ main {
         width: 200px;
         object-fit: contain;
     }
-}
+} 
