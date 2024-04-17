@@ -95,7 +95,7 @@ let bebidasJson = [
       price: [5.0, 7.0, 9.0],
       description: "Lata de refrigerante (Coca-Cola, Pepsi, Guaraná)",
       tipo: "Refrescante e delicioso.",
-      sizes: ["300ml", "500ml", "700ml"],
+      sizes: ["150ml","300ml", "500ml", "700ml"],
       img: "images/bebidas/Bebida1.png"
     },
     {
@@ -104,7 +104,7 @@ let bebidasJson = [
       price: [6.5, 8.5, 10.5],
       description: "Suco natural de laranja, limão ou morango",
       tipo: "Opção saudável e refrescante.",
-      sizes: ["300ml", "500ml", "700ml"],
+      sizes: ["150ml","300ml", "500ml", "700ml"],
       img: "images/bebidas/Bebida2.png"
     },
     {
@@ -113,7 +113,7 @@ let bebidasJson = [
       price: [3.0, 4.0, 5.0],
       description: "Garrafa de água mineral sem gás",
       tipo: "Hidratação pura.",
-      sizes: ["300ml", "500ml", "700ml"],
+      sizes: ["150ml","300ml", "500ml", "700ml"],
       img: "images/bebidas/Bebida3.png"
     },
     {
@@ -122,7 +122,7 @@ let bebidasJson = [
       price: [7.5, 9.5, 11.5],
       description: "Smoothie de frutas tropicais ou berries",
       tipo: "Refrescante e nutritivo.",
-      sizes: ["300ml", "500ml", "700ml"],
+      sizes: ["150ml","300ml", "500ml", "700ml"],
       img: "images/bebidas/Bebida4.png"
     },
     {
@@ -131,7 +131,7 @@ let bebidasJson = [
       price: [7.0, 9.0, 11.0],
       description: "Copo de chopp (300ml, 500ml, 700ml)",
       tipo: "Gelado e saboroso.",
-      sizes: ["300ml", "500ml", "700ml"],
+      sizes: ["150ml","300ml", "500ml", "700ml"],
       img: "images/bebidas/Bebida5.png"
     },
     {
@@ -140,7 +140,7 @@ let bebidasJson = [
       price: [6.0, 8.0, 10.0],
       description: "Garrafa de cerveja nacional ou importada",
       tipo: "Para os apreciadores de uma boa cerveja.",
-      sizes: ["300ml", "500ml", "700ml"],
+      sizes: ["150ml","300ml", "500ml", "700ml"],
       img: "images/bebidas/Bebida6.png"
     },
   ];
@@ -153,6 +153,8 @@ let sobremesasJson = [
     price: 9.0,
     description: "Sundae de chocolate, morango ou caramelo",
     tipo: "Uma explosão de sabor e doçura.",
+    img: "images/sobremesas/Sobremesa1.png",
+    sizes: ["tamanho único"]
   },
   {
     id: 2,
@@ -160,6 +162,8 @@ let sobremesasJson = [
     price: 7.5,
     description: "Fatia de torta de maçã com canela",
     tipo: "Clássico e reconfortante.",
+    img: "images/sobremesas/Sobremesa2.png",
+    sizes: ["tamanho único"]
   },
   {
     id: 3,
@@ -167,6 +171,8 @@ let sobremesasJson = [
     price: 6.5,
     description: "Brownie de chocolate com sorvete de baunilha",
     tipo: "Perfeito equilíbrio entre crocante e cremoso.",
+    img: "images/sobremesas/Sobremesa3.png",
+    sizes: ["tamanho único"]
   },
   {
     id: 4,
@@ -174,6 +180,8 @@ let sobremesasJson = [
     price: 8.5,
     description: "Fatia de cheesecake com calda de frutas vermelhas",
     tipo: "Cremoso e irresistível.",
+    img: "images/sobremesas/Sobremesa4.png",
+    sizes: ["tamanho único"]
   },
   {
     id: 5,
@@ -181,6 +189,8 @@ let sobremesasJson = [
     price: 5.5,
     description: "Pudim de leite condensado",
     tipo: "Tradicional e delicioso.",
+    img: "images/sobremesas/Sobremesa5.png",
+    sizes: ["tamanho único"]
   },
   {
     id: 6,
@@ -188,5 +198,7 @@ let sobremesasJson = [
     price: 8.0,
     description: "Milkshake de chocolate, morango ou baunilha",
     tipo: "Deliciosamente cremoso e indulgente.",
+    img: "images/sobremesas/Sobremesa6.png",
+    sizes: ["tamanho único"]
   },
 ];

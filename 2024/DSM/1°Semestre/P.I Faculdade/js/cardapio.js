@@ -17,8 +17,6 @@ burgerJson.forEach((item, index) => {
   burgerArea.insertAdjacentHTML("beforeend", insereBurger);
 });
 
-
-
 bebidasJson.forEach((item, index) => {
     let insereBebida = `
     <div class="drinks">
@@ -47,14 +45,3 @@ sobremesasJson.forEach((item, index) => {
         </div>`
     sobremesasArea.insertAdjacentHTML("beforeend", insereSobremesa);
 });
-
-/* <div class="sobremesas">
-                    <div class="sobremesa-img-area content-area">
-                        <img class="sobremesa-img content-img" src="" alt="" srcset="" />
-                    </div>
-                    <div class="sobremesa-infos content-infos">
-                        <p class="sobremesa-nome content-name"></p>
-                        <p class="sobremesa-descricao content-descricao"></p>
-                        <p class="sobremesa-ingredientes content-ingredientes"></p>
-                    </div>
-                </div>  */
