@@ -9,6 +9,5 @@ ___
 <img align="center" src='Baratas.gif'>
 
 
-<p align="center">Para visualizar a animação, acesse o [Baratas no CodePen 😁](https://codepen.io/leonardocunha1/pen/vYwEXNX)
-</p>
+Para visualizar a animação, acesse o [Projeto no CodePen](https://codepen.io/leonardocunha1/pen/vYwEXNX)
 
