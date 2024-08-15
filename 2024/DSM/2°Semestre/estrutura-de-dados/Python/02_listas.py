@@ -68,3 +68,45 @@ for i in nums:
     
 # nesse print abaixo, o que está entre aspas é o separador dos itens da lista. Isso só é possível no Python.
 print('-' * 30)
+
+# acessando valores, infomrando a respectiva posição
+print('Elemento da QUINTA posição:', legumes[4])
+print('Elemento da ÚLTIMA posição:', legumes[-1])
+print('Elemento da PENÚLTIMA posição:', legumes[-2])
+
+# substituindo valores
+legumes[2] = 'couve'
+legumes[0] = 'almeirão'
+legumes[-1] = 'alface' # substitui o último elemento
+
+# medindo o tamanho da lista
+print('Tamanho da lista de legume:', len(legumes))
+print('Tamanho da lista de números:', len(nums))
+
+# removendo o último elemento da lista
+removido = legumes.pop()
+print('Elemento removido:', removido)
+
+#removendo um elemento na posição 2
+removido = legumes.pop(2)
+print('Elemento removido:', removido)
+
+# removendo um elemento pelo seu valor
+legumes.remove('beringela')
+print(legumes)
+
+# aumentando uma lista com elementos de outra lista
+mais_legumes = ['espinafre', 'rucula', 'agrião']
+legumes.extend(mais_legumes)
+print(legumes)
+
+# fatiando uma lista - fatiar significa pegar uma parte da lista
+print(legumes[1:4]) # pega do elemento 1 até o 4, sem incluir o 4
+
+# cria uma sublista que contém os elementos desde o início áte o elemento 6
+sublista_inicio_6 = legumes[:7]
+print(sublista_inicio_6)
+
+# cria uma sublista que contém os elementos desde o elemento 3 até o final
+sublista_3_fim = legumes[3:]
+print(sublista_3_fim)
