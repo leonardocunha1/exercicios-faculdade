@@ -33,7 +33,7 @@ app.get("/aluno", (req, res) => {
 });
 
 app.get("/aluno/:id", (req, res) => {
-  const id = parseInt(req.params.id, 10); // Converte o id para número
+  const id = parseInt(req.params.id); // Converte o id para número
   const aluno = alunos.find((aluno) => aluno.id === id); // Busca o aluno pelo id
 
   if (aluno) {
