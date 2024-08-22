@@ -18,15 +18,34 @@ print(f"O valor 6 está na posição {pos6}")
 # testes com a lista de nomes
 from data.nomes_completos import nomes
 
+# importando a função time() do módulo time
+from time import time
+
+import sys
+sys.dont_write_bytecode = True # Impede a criação do cache de arquivos .pyc
+
+hora_ini = time()
 resultado1 = busca_sequencial(nomes,'EDSON FERREIRA')
+hora_fim = time()
 print(f"O nome EDSON FERREIRA foi encontrado na posição {resultado1}")
+print(f"Tempo de execução: {(hora_fim - hora_ini)*1000}ms\n")
 
+hora_ini = time()
 resultado2 = busca_sequencial(nomes,'MARIA FERREIRA')
+hora_fim = time()
 print(f"O nome MARIA FERREIRA foi encontrado na posição {resultado2}")
+print(f"Tempo de execução: {(hora_fim - hora_ini)*1000}ms\n")
 
+hora_ini = time()
 resultado3 = busca_sequencial(nomes,'VALDIR SILVA')
+hora_fim = time()
 print(f"O nome VALDIR SILVA foi encontrado na posição {resultado3}")
+print(f"Tempo de execução: {(hora_fim - hora_ini)*1000}ms\n")
 
+hora_ini = time()
 resultado4 = busca_sequencial(nomes,'GILCINEIA GARCIA')
+hora_fim = time()
 print(f"O nome GILCINEIA GARCIA foi encontrado na posição {resultado4}")
+print(f"Tempo de execução: {(hora_fim - hora_ini)*1000}ms\n")
 
+####################################
