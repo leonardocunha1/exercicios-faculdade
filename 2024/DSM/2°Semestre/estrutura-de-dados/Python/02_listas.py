@@ -1,112 +1,141 @@
-#  Lista é uma estrutura de dados que permite armazenar vários valores em uma única variável.
+"""
+LISTA é uma estrutura de dados nativa da linguagem
+Python. Ela permite que vários valores sejam associados
+a uma única variável
+"""
 
 # Lista de strings
-legumes = ['batata', 'cenoura', 'abobrinha', 'beringela', 'pimentão']
+legumes = ["batata", "cenoura", "beterraba", "mandioca", "nabo"]
 
 # Lista de números
-# nums = [3, 10, -7, 0, 1, 22, 4]
+nums = [3, 10, -7, 12.8, -0.5, 4, 22]
 
-# Lista com valores de vários tipos (não é muito comum)
-misturado = ['Joaquim', 3, 10, -7, 0, 1, 22.43, True]
+# Lista com valores de vários tipos (pouco comum)
+mistureba = ["Joaquim", 37, 1.81, 79, True]
 
-# OPERAÇÕES COM LISTAS
-# append(item): Adiciona um item ao final da lista.
-# insert(pos, item): Adiciona um item em uma posição específica.
-# remove(item): Remove um item da lista.
-# pop(pos): Remove um item de uma posição específica.
-# index(item): Retorna a posição de um item na lista.
-# count(item): Retorna a quantidade de vezes que um item aparece na lista.
-# sort(): Ordena a lista.
-# sorted(lista): Retorna uma lista ordenada sem alterar a original.
-# copy(): Retorna uma cópia da lista.
-# reverse(): Inverte a ordem dos itens da lista.
-# len(lista): Retorna o tamanho da lista.
-# list(range(inicio, fim, passo)): Cria uma lista de números.
-# list(string): Converte uma string em uma lista de caracteres.
-# list(): Cria uma lista vazia.
+##### OPERAÇÕES SOBRE LISTAS #####
 
-# Exemplo de uso de listas
+# 1) PERCURSO
+# Percorrer uma lista significa visitar cada um de seus itens e
+# fazer algo com ele. No exemplo a seguir, vamos dar print() em
+# cada um dos legumes da lista
+for x in legumes:
+    print(x)
 
-# Adicionando um item ao final da lista
-legumes.append('alface')
+# Traço separador
+print("-" * 80)
 
-# Adicionando um item em uma posição específica
-legumes.insert(2, 'rabanete')
+# Percorrendo a lista de números e exibindo o valor do dobro de 
+# cada item
+for n in nums:
+    print(n * 2)
 
-# Removendo um item da lista
-legumes.remove('abobrinha')
+print("-" * 80)
 
-# Removendo um item de uma posição específica
-legumes.pop(0)
+#2) INSERÇÃO DE UM NOVO ELEMENTO NO *FIM* DA LISTA: append()
+print('legumes, antes:', legumes)
+print('nums, antes:', nums)
 
-# Encontrando a posição de um item na lista
-pos = legumes.index('beringela')
+# Inserindo novos itens ao final das listas
+legumes.append("batata-doce")
+nums.append(-11)
 
-# Contando a quantidade de vezes que um item aparece na lista
-qtd = legumes.count('cenoura')
+print('legumes, depois:', legumes)
+print('nums, depois:', nums)
 
-# Ordenando a lista
-legumes.sort()
+print("-" * 80)
 
-# Invertendo a ordem dos itens da lista
-legumes.reverse()
+# 3) INSERÇÃO DE UM NOVO ELEMENTO NA POSIÇÃO ESPECIFICADA: insert()
+#    Parâmetros:
+#    1º ~> a posição onde será feita a inserção (A CONTAGEM COMEÇA
+#          EM ZERO)
+#    2º ~> o novo elemento a ser inserido
 
-# Tamanho da lista
-tam = len(legumes)
-
-# Criando uma lista de números
-nums = list(range(1, 11, 2))
-# nums = [1, 3, 5, 7, 9]. porque o 11 não entra? porque o range vai até o número anterior ao fim.
-
-# Fazendo iteração
-for legume in legumes:
-    print(legume)
-
-# Fazendo iteração e dobrando os valores
-for i in nums:
-    print(i * 2)
-    
-# nesse print abaixo, o que está entre aspas é o separador dos itens da lista. Isso só é possível no Python.
-print('-' * 30)
-
-# acessando valores, infomrando a respectiva posição
-print('Elemento da QUINTA posição:', legumes[4])
-print('Elemento da ÚLTIMA posição:', legumes[-1])
-print('Elemento da PENÚLTIMA posição:', legumes[-2])
-
-# substituindo valores
-legumes[2] = 'couve'
-legumes[0] = 'almeirão'
-legumes[-1] = 'alface' # substitui o último elemento
-
-# medindo o tamanho da lista
-print('Tamanho da lista de legume:', len(legumes))
-print('Tamanho da lista de números:', len(nums))
-
-# removendo o último elemento da lista
-removido = legumes.pop()
-print('Elemento removido:', removido)
-
-#removendo um elemento na posição 2
-removido = legumes.pop(2)
-print('Elemento removido:', removido)
-
-# removendo um elemento pelo seu valor
-legumes.remove('beringela')
+# Inserindo um novo elemento na QUARTA posição
+legumes.insert(3, "mandioquinha")
 print(legumes)
 
-# aumentando uma lista com elementos de outra lista
-mais_legumes = ['espinafre', 'rucula', 'agrião']
+# Inserindo um novo elemento na PRIMEIRA posição
+legumes.insert(0, "cebola")
+print(legumes)
+
+print("-" * 80)
+
+# 4) ACESSANDO VALORES, INFORMANDO A RESPECTIVA POSIÇÃO
+print("Elemento da QUINTA posição:", legumes[4])
+print("Elemento da PRIMEIRA posição:", legumes[0])
+print("Elemento da ÚLTIMA posição:", legumes[-1])
+print("Elemento da PENÚLTIMA posição:", legumes[-2])
+
+print("-" * 80)
+
+# 5) SUBSTITUINDO VALORES EXISTENTES
+print("ANTES:", legumes)
+
+# Substituindo o valor na posição 3 (QUARTA posição)
+legumes[3] = "vagem"
+# Substituindo o valor na posição 0 (PRIMEIRA posição)
+legumes[0] = "cará"
+# Substituindo o valor na posição -1 (ÚLTIMA posição)
+legumes[-1] = "inhame"
+
+print("DEPOIS:", legumes)
+
+print("-" * 80)
+
+# 6) DETERMINANDO A QUANTIDADE DE ELEMENTOS DA LISTA: len()
+print("Quantidade de elementos da lista de legumes:", len(legumes))
+print("Quantidade de elementos da lista de números:", len(nums))
+
+print("-" * 80)
+
+# 7) REMOVENDO O *ÚLTIMO* ELEMENTO DE UMA LISTA: pop() (sem parâmetro)
+print("ANTES:", legumes)
+removido = legumes.pop()
+print("Valor removido:", removido)
+print("DEPOIS:", legumes)
+
+print("-" * 80)
+
+# 8) REMOVENDO UM ELEMENTO POR SUA POSIÇÃO: pop() (com parâmetro)
+removido = legumes.pop(3)
+print("Elemento removido da posição 3:", removido)
+print(legumes)
+
+removido = legumes.pop(0)
+print("Valor removido da primeira posição:", removido)
+print(legumes)
+
+print("-" * 80)
+
+# 9) REMOVENDO UM ELEMENTO POR SEU VALOR: remove()
+legumes.remove("mandioquinha")      # Não retorna valor
+print(legumes)
+
+print("-" * 80)
+
+# 10) AUMENTANDO UMA LISTA COM ELEMENTOS DE OUTRA LISTA: extend()
+mais_legumes = ["abobrinha", "quiabo", "jiló", "cabotiá", "chuchu"]
 legumes.extend(mais_legumes)
 print(legumes)
 
-# fatiando uma lista - fatiar significa pegar uma parte da lista
-print(legumes[1:4]) # pega do elemento 1 até o 4, sem incluir o 4
+print("-" * 80)
 
-# cria uma sublista que contém os elementos desde o início áte o elemento 6
+# 11) FATIANDO UMA LISTA
+#     Fatiar significa copiar um pedaço da lista (uma sublista),
+#     criando uma nova lista
+
+# Cria uma sublista que contém os elementos das posições 2 a 5
+# (posição 6 *NÃO ENTRA*)
+sublista2_5 = legumes[2:6]
+print("Sublista de 2 a 5:", sublista2_5)
+
+# Cria uma sublista que contém os elementos desde o início até
+# a posição 6 (posição 7 *NÃO ENTRA*)
 sublista_inicio_6 = legumes[:7]
-print(sublista_inicio_6)
+print("Sublista do início à posição 6:", sublista_inicio_6)
 
-# cria uma sublista que contém os elementos desde o elemento 3 até o final
-sublista_3_fim = legumes[3:]
-print(sublista_3_fim)
+# Cria uma sublista que contém os elementos da posição 4 até
+# o final da lista
+sublista4_fim = legumes[4:]
+print("Sublista da posição 4 até o final:", sublista4_fim)

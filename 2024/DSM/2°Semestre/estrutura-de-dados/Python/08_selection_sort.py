@@ -27,6 +27,17 @@ nums = [9, 3, 6, 1, 8, 2, 4, 7, 5]
 # chamada da função selection_sort() passando a lista de números desordenados como argumento
 print(selection_sort(nums))
 
+# testando com os nomes
+from data.nomes_completos import nomes
+from time import time
+
+# recortando a lista de nomes para testes
+nomes_teste = nomes[:3000]
+
+hora_ini = time()
+print(selection_sort(nomes_teste))
+hora_fim = time()
+print(hora_fim - hora_ini)
 
 # def selection_sort(lista):
 #     """
