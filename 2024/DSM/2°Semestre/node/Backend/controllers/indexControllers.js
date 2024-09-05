@@ -1,11 +1,19 @@
 module.exports = {
+  index,
   indexLogin,
   indexNotFound,
 };
 
-function indexLogin(req, res) {
-  console.log("Rota Raiz Encontrada!!!");
+function index(req, res) {
+  console.log("Rota Raiz Encontrada!!! TESTANDO MANEIRO");
   res.send("<h3> Rota Raiz Encontrada! <br> Olá Mundo </h3>");
+}
+
+function indexLogin(req, res) {
+  res.render("login.ejs", {
+    title: "Login",
+    mensagem: "Senha do usuário",
+  });
 }
 
 function indexNotFound(req, res) {
