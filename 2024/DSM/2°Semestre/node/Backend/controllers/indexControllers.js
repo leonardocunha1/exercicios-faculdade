@@ -4,11 +4,11 @@ module.exports = {
 };
 
 function indexLogin(req, res) {
-  console.log("Entrou na função indexLogin");
+  console.log("Rota Raiz Encontrada!!!");
   res.send("<h3> Rota Raiz Encontrada! <br> Olá Mundo </h3>");
 }
 
 function indexNotFound(req, res) {
-  console.log("Entrou na função indexNotFound");
+  console.log("Página não Encontrada - 404");
   res.send("<h3>Página Não Encontrada!</h3><p> Erro 404</p>");
 }

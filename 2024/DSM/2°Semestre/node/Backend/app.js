@@ -1,10 +1,13 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
 const aluno = require("./routes/alunosRoutes");
 const index = require("./routes/indexRoutes");
 
 app.use(express.json());
+
+app.set("views", path.join(__dirname, "./api/views"));
 
 const port = 3000;
 
