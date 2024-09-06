@@ -6,7 +6,8 @@ const router = express.Router();
 const controllersIndex = require("../controllers/indexControllers.js");
 
 // rota raiz do projeto
-router.get("/", controllersIndex.indexLogin);
+router.get("/", controllersIndex.index);
+router.get("/login", controllersIndex.indexLogin);
 
 // Rota para favicon.ico (evitar rota * ser acionada por engano)
 router.get("/favicon.ico", (req, res) => res.status(204));
