@@ -1,5 +1,5 @@
+/*
 const express = require("express");
-const path = require("path");
 const app = express();
 
 const aluno = require("./routes/alunosRoutes");
@@ -25,6 +25,42 @@ app.use("/", index);
 //servidor rodando
 app.listen(port, () => {
   console.log(`Aplicativo Rodando na Porta ${port}`);
+});
+
+module.exports = app;
+*/
+
+const express = require("express");
+const path = require("path"); // Importa o módulo path
+const app = express();
+
+const aluno = require("./routes/alunosRoutes");
+const index = require("./routes/indexRoutes");
+
+app.use(express.json());
+
+// Definir a engine de visualização como EJS
+app.set("view engine", "ejs");
+
+// Definir o diretório onde os arquivos .ejs estão localizados
+app.set("views", path.join(__dirname, "api/views"));
+
+// Configura os diretórios estáticos de maneira robusta usando path
+app.use("/static", express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "estilos")));
+app.use(express.static(path.join(__dirname, "imagens")));
+app.use(express.static(path.join(__dirname, "js")));
+
+const port = 3000;
+
+// Rotas
+app.use("/aluno", aluno);
+app.use("/", index);
+
+// Servidor rodando
+app.listen(port, () => {
+  console.log(`Aplicativo rodando na porta ${port}`);
 });
 
 module.exports = app;
