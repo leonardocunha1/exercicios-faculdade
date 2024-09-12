@@ -1,8 +1,4 @@
-const alunos = [
-  { id: 1, nome: "Fulano Silva", idade: 27 },
-  { id: 2, nome: "Ciclano Almeida", idade: 32 },
-  { id: 7, nome: "José de Assis", idade: 97 },
-];
+const alunos = require("../../dados.json");
 
 function getAllAlunos() {
   return alunos;
