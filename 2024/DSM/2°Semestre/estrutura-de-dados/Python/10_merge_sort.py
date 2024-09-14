@@ -4,7 +4,7 @@ divisao = juncs = comps = 0
 def merge_sort(lista):
     """
     ALGORITMO DE ORDENAÇÃO MERGE SORT
-    No processo de ordenação, este algoritmo 'demonta' a lista original, contendo N elementos, até obter N listas com apenas um elemento cada uma. Em seguida, usando a técnica de mesclagem (merging), "remonta" a lita, desta vez, com os elementos ordenados.
+    No processo de ordenação, este algoritmo 'desmonta' a lista original, contendo N elementos, até obter N listas com apenas um elemento cada uma. Em seguida, usando a técnica de mesclagem (merging), "remonta" a lita, desta vez, com os elementos ordenados.
     """
     global divisao, juncs, comps
 

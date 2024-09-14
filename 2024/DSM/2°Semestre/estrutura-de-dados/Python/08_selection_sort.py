@@ -1,7 +1,7 @@
 def selection_sort(lista):
     """
         ALGORITMO DE ORDENAÇÃO SELECTION SORT
-        Isola (seleciona) o primeiro eleento da lista e , em seguida, encontra o menor valor entre os elmeentos do restante da lista.Se o valor encontrado for MENOR que o valor previamente selecionado, efetua a troca entre eles. Continuando, seleciona o segundo elemento da lista, buscando pelo menor valor nas posições subsequentes. Faz a troca entre os dois valores, se necessário. O processo se repete até que o penúltimo elemento da lista seja selecionado, comparado com o último e feita a troca entre eles, se for o caso.
+        Isola (seleciona) o primeiro elemento da lista e , em seguida, encontra o menor valor entre os elementos do restante da lista.Se o valor encontrado for MENOR que o valor previamente selecionado, efetua a troca entre eles. Continuando, seleciona o segundo elemento da lista, buscando pelo menor valor nas posições subsequentes. Faz a troca entre os dois valores, se necessário. O processo se repete até que o penúltimo elemento da lista seja selecionado, comparado com o último e feita a troca entre eles, se for o caso.
     """
 
     # loop que vai da primeira posição até a penúltima posição da lista
