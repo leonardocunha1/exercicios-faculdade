@@ -10,10 +10,10 @@ def quick_sort(lista, ini = 0, fim = None):
     menores que o pivô, e outra sublista à direita, contendo
     apenas valores maiores que o pivô.
     Em seguida, recursivamente, repete o processo em cada uma
-    das sublistas, até que toda a lista esteja ordenada.
+    das sublistas, até que toda a lista estaja ordenada.
     """
     global comps, trocas, passd
- 
+
     # Quando não soubermos o valor da variável 'fim',
     # atribuímos a ela o valor da última posição da lista
     if fim is None: fim = len(lista) - 1
@@ -67,11 +67,44 @@ def quick_sort(lista, ini = 0, fim = None):
 
 comps = trocas = passd = 0
 
-nums = [7, 9, 5, 4, 0, 3, 8, 1, 6, 2]
-# nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-# nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+#nums = [7, 9, 5, 4, 0, 3, 8, 1, 6, 2]
+
+# Pior caso
+nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+# Melhor caso
+nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 print("ANTES:   ", nums)
 quick_sort(nums)
 print("DEPOIS:  ", nums)
 print(f"Comparações: {comps}; trocas: {trocas}; passadas: {passd}")
+
+##############################################################
+
+from time import time
+
+import sys, tracemalloc
+sys.dont_write_bytecode = True      # Impede a criação do cache
+
+# TESTES COM A LISTA DE NOMES
+from data.nomes_desord import nomes
+
+# Recortando os 100k primeiros nomes
+# nomes = nomes[:100000]
+
+comps = trocas = passd = 0
+
+tracemalloc.start()     # Inicia medição do consumo de memória
+hora_ini = time()
+quick_sort(nomes)
+hora_fim = time()
+
+# Captura as informações do gasto de memória
+mem_atual, mem_pico = tracemalloc.get_traced_memory()
+tracemalloc.stop()      # Termina a medição da memória
+
+print(nomes)
+print(f"Comparações: {comps}; trocas: {trocas}; passadas: {passd}")
+print(f"Tempo gasto: {(hora_fim - hora_ini) * 1000}ms\n")
+print(f"Pico de memória: { mem_pico / 1024 / 1024 } MB")

@@ -1,93 +1,111 @@
-# variantes de estatística
-divisao = juncs = comps = 0
+divs = juncs = comps = 0        # Variáveis de estatística
 
 def merge_sort(lista):
     """
     ALGORITMO DE ORDENAÇÃO MERGE SORT
-    No processo de ordenação, este algoritmo 'desmonta' a lista original, contendo N elementos, até obter N listas com apenas um elemento cada uma. Em seguida, usando a técnica de mesclagem (merging), "remonta" a lita, desta vez, com os elementos ordenados.
+    No processo de ordenação, este algoritmo "desmonta" a lista
+    original, contendo N elementos, até obter N listas com apenas
+    um elemento cada uma. Em seguida, usando a técnica de mesclagem
+    (merging), "remonta" a lista, desta vez com os elementos já em
+    ordem.
     """
-    global divisao, juncs, comps
+    global divs, juncs, comps
 
     # PARTE 1: DIVISÃO DA LISTA ORIGINAL EM LISTAS MENORES
 
-    # Para que possa haver divisão da lista, é necessário que ela tenha mais de um elemento. Caso contrário, a função retorna a própria lista
-    if len(lista) <= 1:
-        return lista
-    
-    # Encontra a posição do meio da lista, para dividí-la em duas partes
+    # Para que possa haver divisão da lista, esta deve ter mais
+    # de um elemento
+    # Caso contrário, sai da função retornando a própria lista
+    if len(lista) <= 1: return lista
+
+    # Encontra a posição do meio da lista, para fazer a divisão
+    # em duas metades
     meio = len(lista) // 2
 
     # Tira uma cópia da primeira metade da lista
-    lista_esq = lista[:meio]
+    sublista_esq = lista[:meio]
     # Tira uma cópia da segunda metade da lista
-    lista_dir = lista[meio:]
-    divisao += 1
+    sublista_dir = lista[meio:]
+    divs += 1
 
-    # Chama a função merge_sort() recursivamente para dividir as listas em partes menores
-    lista_esq = merge_sort(lista_esq)
-    lista_dir = merge_sort(lista_dir)
+    # Chamamos recursivamente a própria função para que ela
+    # continue repartindo cada sublista em duas partes menores
+    sublista_esq = merge_sort(sublista_esq)
+    sublista_dir = merge_sort(sublista_dir)
 
-    # PARTE 2: REMONTAGEM DA LISTA ORIGINAL, COM OS ELEMENTOS ORDENADOS
+    # PARTE 2: REMONTAGEM DA LISTA, DE FORMA ORDENADA
 
-    # Cria variáveis para controlar as posições dos elementos das listas a serem mescladas
-    pos_esq = pos_dir = 0 
+    pos_esq = pos_dir = 0
+    ordenada = []       # Lista vazia
 
-    # Cria uma lista vazia para receber os elementos ordenados
-    lista_ord = []
-
-    # Enquanto houver elementos nas listas a serem mescladas (lista_esq e lista_dir)
-    while pos_esq < len(lista_esq) and pos_dir < len(lista_dir):
+    while pos_esq < len(sublista_esq) and pos_dir < len(sublista_dir):
         comps += 1
-        # O menor elemento é da lista da esquerda
-        if lista_esq[pos_esq] < lista_dir[pos_dir]:
-            # copia o elemento da lista da esquerda para a lista ordenada
-            lista_ord.append(lista_esq[pos_esq])
-            pos_esq += 1 # avança o ponteiro da lista da esquerda
-        # O menor elemento é da lista da direita
+        # O menor elemento está na sublista da esquerda
+        if sublista_esq[pos_esq] < sublista_dir[pos_dir]:
+            # Copia o elemento da lista esquerda para a lista ordenada
+            ordenada.append(sublista_esq[pos_esq])
+            pos_esq += 1        # Avança o ponteiro da esquerda
+
+        # O menor elemento está na sublista da direita
         else:
-            # copia o elemento da lista da direita para a lista ordenada
-            lista_ord.append(lista_dir[pos_dir])
-            pos_dir += 1 # avança o ponteiro da lista da direita
+            # Copia o elemento que está na sublista da direita
+            ordenada.append(sublista_dir[pos_dir])
+            pos_dir += 1        # Avança o ponteiro da direita
+
+    # <~ CUIDADO COM A INDENTAÇÃO AQUI
     
-    # CUIDADO COM A INDENTAÇÃO!
-    
-    # Quando uma das listas chegar ao fim, a outra ainda terá elementos a serem copiados
+    # Verificação da sobra
     sobra = []
 
-    # Sobra elementos na lista da esquerda
-    if pos_esq < len(lista_esq):
-        sobra = lista_esq[pos_esq:]
-    # Sobra elementos na lista da direita
-    else:
-        sobra = lista_dir[pos_dir:]
+    # Sobra à esquerda
+    if pos_esq < pos_dir: sobra = sublista_esq[pos_esq:]
+    # Sobra à direita
+    else: sobra = sublista_dir[pos_dir:]
 
-    # O resultado final é a junção (concatenação) da lista ordenada com os elementos que sobraram
-    juncs += 1    
-    return lista_ord + sobra
+    # O resultado final é a junção (concatenação) da lista
+    # ordenada com a sobra
+    juncs += 1
+    return ordenada + sobra
 
-############################################################################
+###################################################################
 
-# lista de números desordenados
-nums = [9, 3, 6, 1, 8, 2, 4, 7, 5]
-
+# nums = [7, 9, 5, 4, 0, 3, 8, 1, 6, 2]
+# nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 divs = juncs = comps = 0
-# chamada da função merge_sort() passando a lista de números desordenados como argumento
-print("Antes:", nums)
-print(merge_sort(nums))
-print("Depois:", nums)
-print(f"Divisões: {divisao}, Junções: {juncs}, Comparações: {comps}")
+print("ANTES:   ", nums)
+nums_ord = merge_sort(nums)
+print("DEPOIS:  ", nums_ord)
+print("ORIGINAL:", nums)
+print(f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
 
-# testando com os nomes
-from data.nomes_completos import nomes
+##############################################################
+
 from time import time
-import sys
-sys.dont_write_bytecode = True # não criar arquivos .pyc, ou seja, o cache
 
-# recortando a lista de nomes para testes
-nomes_teste = nomes[:10000]
+import sys, tracemalloc
+sys.dont_write_bytecode = True      # Impede a criação do cache
 
+# TESTES COM A LISTA DE NOMES
+from data.nomes_desord import nomes
+
+# Recortando os 100k primeiros nomes
+# nomes = nomes[:100000]
+
+divs = juncs = comps = 0
+
+tracemalloc.start()     # Inicia medição do consumo de memória
 hora_ini = time()
-print(merge_sort(nomes_teste))
+nomes_ord = merge_sort(nomes)
 hora_fim = time()
-print(hora_fim - hora_ini)
+
+# Captura as informações do gasto de memória
+mem_atual, mem_pico = tracemalloc.get_traced_memory()
+tracemalloc.stop()      # Termina a medição da memória
+
+print(nomes_ord)
+print(f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
+print(f"Tempo gasto: {(hora_fim - hora_ini) * 1000}ms\n")
+print(f"Pico de memória: { mem_pico / 1024 / 1024 } MB")
+

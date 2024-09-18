@@ -1,4 +1,4 @@
-comps = trocas = passd = None       # Variáveis de estatística
+comps = trocas = passd = None       # Variaáveis de estatística
 
 def bubble_sort(lista):
     """
@@ -42,7 +42,13 @@ def bubble_sort(lista):
 
 ######################################################################
 
-nums = [7, 9, 5, 4, 0, 3, 8, 1, 6, 2]
+# nums = [7, 9, 5, 4, 0, 3, 8, 1, 6, 2]
+
+# Pior caso
+# nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+# Melhor caso
+nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 print("ANTES: ", nums)
 bubble_sort(nums)
@@ -59,13 +65,13 @@ sys.dont_write_bytecode = True      # Impede a criação do cache
 # TESTES COM A LISTA DE NOMES
 from data.nomes_desord import nomes
 
-# recortando a lista para testes mais rápidos
-nomes = nomes[:3000]
+# Recortando os 100k primeiros nomes
+nomes = nomes[:100000]
 
 hora_ini = time()
 bubble_sort(nomes)
 hora_fim = time()
 
-print("ANTES: ", nomes)
+print(nomes)
 print(f"Comparações: {comps}; trocas: {trocas}; passadas: {passd}")
 print(f"Tempo gasto: {(hora_fim - hora_ini) * 1000}ms\n")
