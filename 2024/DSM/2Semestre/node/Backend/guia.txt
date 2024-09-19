@@ -1,0 +1,9 @@
+1º npm init -> aqui no nome main precisa colocar app.js (eu esqueci e deixei index.js)
+2º npm i express --save
+3º criar o arquivo app.js (ou o nome que eu der la no main do npm init)
+4º instalar o nodemon -> npm install -g nodemon
+5º adicionar no script do package json ->  "start" : "nodemon index.js"
+
+obs: 
+-- Se não tiver o node_modules ou o package-lock.json no projeto. Usar o npm install para instalá-los
+-- Para iniciar o programa: npm start

@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: bounceInDown 1.5s ease-out;
+    animation-fill-mode: forwards;
+    background-color: #1b1b1b;
+    color: white;
+    font-size: 30px;
+    padding: 14px 20px;
+    margin-right: 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -1000px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate(-50%, 30px);
+    }
+
+    80% {
+        transform: translate(-50%, -10px);
+    }
+
+    90% {
+        transform: translate(-50%, 5px);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+.scale {
+    animation: scaleframes 1s ease infinite;
+    font-size: 100px;
+    position: fixed;
+    left: 50%;
+    top: 20%;
+}
+
+@keyframes scaleframes {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
