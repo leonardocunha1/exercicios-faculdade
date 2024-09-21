@@ -1,0 +1,32 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ConversaoDeDados;
+
+/**
+ *
+ * @author 1091392413016
+ */
+public class ConversaoDeDados2 {
+
+    public double quilmetroParaMetro(double quilometro) {
+        return quilometro * 1000;
+    }
+
+    public double litroParaDecilitros(double litro) {
+        return litro * 10;
+    }
+
+    public double metroCubicoParaPesCubicos(double metroCubico) {
+        return metroCubico * 35.31;
+    }
+
+    public double barrilParaDecalitros(double barril) {
+        return barril * 16.36;
+    }
+
+    public double barrilParaLitros(double barril) {
+        return barril * 163.65;
+    }
+}
