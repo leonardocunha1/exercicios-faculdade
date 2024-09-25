@@ -1,0 +1,53 @@
+[
+    {
+        "id" : 1,
+        "nome": "General Motors",
+        "fundacao": "1908",
+        "carros": [
+            {
+                "id": 1,
+                "modelo": "Camaro",
+                "ano": 2021
+            },
+            {
+                "id": 2,
+                "modelo": "Onix",
+                "ano": 2021
+            }
+        ]
+    },
+    {
+        "id" : 2,
+        "nome": "Ford",
+        "fundacao": "1903",
+        "carros": [
+            {
+                "id": 3,
+                "modelo": "Mustang",
+                "ano": 2021
+            },
+            {
+                "id": 4,
+                "modelo": "Ka",
+                "ano": 2021
+            }
+        ]
+    },
+    {
+        "id" : 3,
+        "nome": "Fiat",
+        "fundacao": "1899",
+        "carros": [
+            {
+                "id": 5,
+                "modelo": "Toro",
+                "ano": 2021
+            },
+            {
+                "id": 6,
+                "modelo": "Uno",
+                "ano": 2021
+            }
+        ]
+    }
+]

@@ -1,0 +1,24 @@
+
+[
+    {
+        "id": 1,
+        "nome": "João da marcenaria",
+        "partido": "PSDB"
+    },
+    {
+        "id": 2,
+        "nome": "Pedro carteiro",
+        "partido": "PT"
+    },
+    {
+        "id": 112,
+        "nome": "Maria da padaria",
+        "partido": "PMDB"
+    },
+    {
+        "id": 42,
+        "nome": "José da farmácia",
+        "partido": "PL"
+    }
+]
+
