@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path"); // Importa o módulo path
 const app = express();
 
+const livrosRoutes = require("./api/routes/livrosRoutes");
 const montadora = require("./api/routes/montadorasRoutes");
 const candidato = require("./api/routes/candidatosRoutes");
 const index = require("./api/routes/indexRoutes");
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, "js")));
 const port = 3000;
 
 // Rotas
+app.use("/livros", livrosRoutes);
 app.use("/montadora", montadora);
 app.use("/candidato", candidato);
 app.use("/", index);

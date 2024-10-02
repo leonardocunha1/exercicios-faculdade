@@ -14,7 +14,7 @@ conexao.connect((erro) => {
     return;
   }
 
-  conexao.query("USE" + database);
+  conexao.query("USE " + database);
   console.log("\nConectado ao banco de dados");
 });
 
