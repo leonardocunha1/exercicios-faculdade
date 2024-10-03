@@ -1,16 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const {
-  getAll,
-  getCod,
-  getId,
-  getSobre,
-} = require("../controllers/livrosControllers.js");
+const { getAll, getById } = require("../controllers/livrosControllers.js");
 
 router.get("/", getAll);
-// router.get("/sobre", getSobre);
-// router.get("/:cod", getCod);
-// router.get("/editar/:id", getId);
+router.get("/:id", getById);
 
 module.exports = router;

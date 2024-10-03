@@ -10,6 +10,15 @@ function getAll(callback) {
   conexao.query(sql, callback);
 }
 
+function getById(id, callback) {
+  console.log("Model - iniciando leitura dos dados dos livros...\n");
+
+  const sql = `SELECT * FROM livros WHERE liv_codigo = ${id}`;
+
+  conexao.query(sql, callback);
+}
+
 module.exports = {
   getAll,
+  getById,
 };

@@ -23,6 +23,24 @@ function getAll(req, res) {
   });
 }
 
+function getById(req, res) {
+  const id = req.params.id;
+
+  console.log(
+    "Controller - iniciando leitura dos dados do livro na Model...\n"
+  );
+
+  livrosModels.getById(id, function (erro, resultado) {
+    if (erro) {
+      console.log("Controller - erro ao ler os dados do livro: " + erro);
+      res.status(500).send(erro);
+    } else {
+      res.status(200).json(resultado);
+    }
+  });
+}
+
 module.exports = {
   getAll,
+  getById,
 };
