@@ -23,8 +23,14 @@ function create(dados, callback) {
   conexao.query(msql, dados, callback);
 }
 
+function update(dados, id, callback) {
+  let msql = `UPDATE livros SET liv_titulo = '${dados.liv_titulo}', liv_edicao = '${dados.liv_edicao}' WHERE liv_codigo = '${id}'`;
+  conexao.query(msql, callback);
+}
+
 module.exports = {
   getAll,
   getById,
   create,
+  update,
 };

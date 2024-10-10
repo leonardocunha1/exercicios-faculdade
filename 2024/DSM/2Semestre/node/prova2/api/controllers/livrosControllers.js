@@ -48,6 +48,7 @@ function getById(req, res) {
 
 //   livrosModels.create(dados, function (err, resultado) {
 //     if (err) {
+//     throw err;
 //       console.log("Erro ao inserir livro: " + err);
 //     } else {
 //       console.log("Livro inserido com sucesso");
@@ -68,9 +69,29 @@ function create(req, res) {
       res.status(500).send("Erro ao inserir livro: " + err);
     } else {
       console.log("Livro inserido com sucesso");
+      // res
+      //   .status(201)
+      //   .json({ message: "Livro inserido com sucesso", resultado });
+      res.redirect("/");
+    }
+  });
+}
+
+function update(req, res) {
+  console.log("Alterando registro de livros");
+  let id = req.params.id;
+  console.log(req.body);
+  let dados = req.body;
+
+  livrosModels.update(dados, id, function (err, resultado) {
+    if (err) {
+      console.log("Erro ao alterar livro: " + err);
+      res.status(500).send("Erro ao alterar livro: " + err);
+    } else {
+      console.log("Livro alterado com sucesso");
       res
-        .status(201)
-        .json({ message: "Livro inserido com sucesso", resultado });
+        .status(200)
+        .json({ message: "Livro alterado com sucesso", resultado });
     }
   });
 }
@@ -79,4 +100,5 @@ module.exports = {
   getAll,
   getById,
   create,
+  update,
 };
