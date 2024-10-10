@@ -40,7 +40,43 @@ function getById(req, res) {
   });
 }
 
+// function create(req, res) {
+//   let dados = req.body;
+//   console.log("Adicionando livros");
+//   console.log(req.body);
+//   dados.liv_codigo = 0;
+
+//   livrosModels.create(dados, function (err, resultado) {
+//     if (err) {
+//       console.log("Erro ao inserir livro: " + err);
+//     } else {
+//       console.log("Livro inserido com sucesso");
+//       res.redirect("/");
+//     }
+//   });
+// }
+
+function create(req, res) {
+  let dados = req.body;
+  console.log("Adicionando livros");
+  console.log(req.body);
+  dados.liv_codigo = 0;
+
+  livrosModels.create(dados, function (err, resultado) {
+    if (err) {
+      console.log("Erro ao inserir livro: " + err);
+      res.status(500).send("Erro ao inserir livro: " + err);
+    } else {
+      console.log("Livro inserido com sucesso");
+      res
+        .status(201)
+        .json({ message: "Livro inserido com sucesso", resultado });
+    }
+  });
+}
+
 module.exports = {
   getAll,
   getById,
+  create,
 };

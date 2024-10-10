@@ -18,7 +18,13 @@ function getById(id, callback) {
   conexao.query(sql, callback);
 }
 
+function create(dados, callback) {
+  let msql = "INSERT INTO LIVROS SET ? ";
+  conexao.query(msql, dados, callback);
+}
+
 module.exports = {
   getAll,
   getById,
+  create,
 };
