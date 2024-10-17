@@ -1,0 +1,9 @@
+// npm i -D typescript (instala o typescript localmente)
+// npm i -D ts-node (instala o ts-node localmente)
+// npx tsc --init (cria a pasta tsconfig.json)
+// npm tsc (builda o projeto)
+// npm start (feito no package.json)
+// node "caminho do arquivo"
+// node --watch "caminho do arquivo"
+// npm i -D tsx (O TSX É UM TS-NODE MELHORADO, OU SEJA, USAR O TSX)
+// node --import=tsx --watch "caminho do arquivo"
